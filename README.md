@@ -38,15 +38,16 @@ Git - Web ERP Project (서지훈, 우상무, 임혜지, 김가민)
     register.jsp : 회사등록 페이지
     rightsRegist.jsp : 권한등록 페이지
     settingRightModal.jsp : 권한 설정 
-  
-  css, data, dist, js, less, partials, vendor
     
-    페이지 구성에 필요한 javascript, css 등등
-  
   main : 초기화면 또는 공통요소
     
     mainDashboard.jsp : 메인 페이지
     sideNav.jsp : 사이드 네비게이션 모듈
+  
+  css, data, dist, js, less, partials, vendor
+    
+    페이지 구성에 필요한 javascript, css 등등
+
 # page_for_study
 HTML 및 Project 화면 구성 
 
