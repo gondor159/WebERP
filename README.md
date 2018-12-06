@@ -1,5 +1,7 @@
 # WebERP
 Git - Web ERP Project (서지훈, 우상무, 임혜지, 김가민)
+    
+    iCUBE 핵심ERP 2016을 바탕으로 Web 기반의 ERP를 개발합니다.
 
 # WebContent
 
