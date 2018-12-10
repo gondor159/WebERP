@@ -30,6 +30,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+<title>WebERP</title>
 
 <!-- Modal table CSS -->
 <link href="../css/table.css" rel="stylesheet">

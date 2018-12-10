@@ -77,7 +77,7 @@ $(document).on("click",".settingID",function(){
 	var companyCode = encodeURIComponent('<%=companyCont.getCompanyCode()%>');
 	var settingID = $(this).attr('value');
 	$('#settingRight').modal({
-		remote : 'settingRightModal.jsp?companyCode=' + companyCode + '&settingID=' + settingID
+		remote : 'modal/settingRightModal.jsp?companyCode=' + companyCode + '&settingID=' + settingID
 	});
  });
 </script>

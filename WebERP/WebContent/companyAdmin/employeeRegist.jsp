@@ -124,17 +124,17 @@ $(function(){
 	var companyCode = encodeURIComponent('<%=companyCont.getCompanyCode()%>');
     $("#findUserButton").click(function(){
        $('#findUser').modal({
-        				remote : 'findUserModal.jsp'
+        				remote : 'modal/findUserModal.jsp'
               });
     })
     $("#findPlaceButton").click(function(){
        $('#findPlace').modal({
-        				remote : 'findPlaceModal.jsp?companyCode=' + companyCode
+        				remote : 'modal/findPlaceModal.jsp?companyCode=' + companyCode
               });
     })
      $("#findDeptButton").click(function(){
        $('#findDept').modal({
-        				remote : 'findDeptModal.jsp?companyCode=' + companyCode
+        				remote : 'modal/findDeptModal.jsp?companyCode=' + companyCode
               });
     })
 });

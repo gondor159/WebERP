@@ -86,6 +86,21 @@
 		var businessType = encodeURIComponent('<%=companyCont.getBusinessType()%>');
 		var establishmentDate = encodeURIComponent('<%=companyCont.getEstablishmentDate()%>'); 
 		var startDate = encodeURIComponent('<%=companyCont.getStartDate()%>');
+		$.ajax({
+			type : 'POST',
+			url : './businessTypeGetNameServlet',
+			data : {
+				businessCondition : businessCondition,
+				businessType : businessType
+			},
+			success : function(data) {
+				if(data == "") return;
+				var parsed = JSON.parse(data);
+				var result = parsed.result;
+				$('#businessConditionName').attr('value', result[0].value);
+				$('#businessTypeName').attr('value', result[1].value);
+			}
+		});
 		$('#businessLicenseNum').attr('value',
 				decodeURIComponent(businessLicenseNum));
 		$('#companyName').attr('value', decodeURIComponent(companyName));

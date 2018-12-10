@@ -211,79 +211,79 @@ $(function(){
 	/* 거래처 검색 버튼 */
 	$("#searchCustomBtn").click(function(){
 		$('#searchCustom').modal({
-			remote : 'searchCustomModal.jsp'
+			remote : 'modal/searchCustomModal.jsp'
 		});
 	})
 	/* 거래처 주소 검색 버튼 */
 	$("#searchAddressBtn").click(function(){
 		$('#searchAddress').modal({
-			remote : 'searchAddressModal.jsp'
+			remote : 'modal/searchAddressModal.jsp'
 		});
 	})
 	/* 업태/종목 검색 버튼 */
 	$("#searchTypeBtn").click(function(){
 		$('#searchType').modal({
-			remote : 'searchTypeModal.jsp'
+			remote : 'modal/searchTypeModal.jsp'
 		});
 	})
 	/* 프로젝트 검색 버튼 */
 	$("#searchProjectBtn").click(function(){
 		$('#searchProject').modal({
-			remote : 'searchProjectModal.jsp?companyCode=' + companyCode
+			remote : 'modal/searchProjectModal.jsp?companyCode=' + companyCode
 		});
 	})
 	/* 거래처 그룹 검색 버튼 */
 	$("#searchCustomGroupBtn").click(function(){
 		$('#searchCustomGroup').modal({
-			remote : 'searchCustomGroupModal.jsp?companyCode=' + companyCode
+			remote : 'modal/searchCustomGroupModal.jsp?companyCode=' + companyCode
 		});
 	})
 	/* 거래처 등급 검색 버튼 */
 	$("#searchCustomGradeBtn").click(function(){
 		$('#searchCustomGrade').modal({
-			remote : 'searchCustomGradeModal.jsp?companyCode=' + companyCode
+			remote : 'modal/searchCustomGradeModal.jsp?companyCode=' + companyCode
 		});
 	})
 	/* 수금 거래처 검색 버튼 */
 	$("#searchCollectCompanyBtn").click(function(){
 		$('#searchCollectCompany').modal({
-			remote : 'searchCollectCompanyModal.jsp?companyCode=' + companyCode
+			remote : 'modal/searchCollectCompanyModal.jsp?companyCode=' + companyCode
 		});
 	})
 	/* 금융기관 검색 버튼 */
 	$("#searchFinancialInstitutionBtn").click(function(){
 		$('#searchFinancialInstitution').modal({
-			remote : 'searchFinancialInstitutionModal.jsp'
+			remote : 'modal/searchFinancialInstitutionModal.jsp'
 		});
 	})
 	/* 은행코드 검색 버튼 */
 	$("#searchAccountCodeBtn").click(function(){
 		$('#searchAccountCode').modal({
-			remote : 'searchAccountCodeModal.jsp?companyCode=' + companyCode
+			remote : 'modal/searchAccountCodeModal.jsp?companyCode=' + companyCode
 		});
 	})
 	/* 부서검색 버튼 */
 	$("#searchChargeDeptCodeBtn").click(function(){
 		$('#searchChargeDeptCode').modal({
-			remote : 'searchChargeDeptCodeModal.jsp?companyCode=' + companyCode
+			remote : 'modal/searchChargeDeptCodeModal.jsp?companyCode=' + companyCode
 		});
 	})
 	/* 직급 검색 버튼 */
 	$("#searchPositionCodeBtn").click(function(){
 		$('#searchPositionCode').modal({
-			remote : 'searchPositionCodeModal.jsp'
+			remote : 'modal/searchPositionCodeModal.jsp'
 		});
 	})
 	/* 사원 검색 버튼 */
 	$("#searchChargeEmployeeCodeBtn").click(function(){
 		$('#searchChargeEmployeeCode').modal({
-			remote : 'searchChargeEmployeeCodeModal.jsp?companyCode=' + companyCode + '&departmentCode=' + $('#chargeDeptCode').val()
+			remote : 'modal/searchChargeEmployeeCodeModal.jsp?companyCode=' + companyCode + '&departmentCode=' + $('#chargeDeptCode').val()
 		});
 	})
 	/* 수신처 주소검색 버튼 */
 	$("#serchReceiveAddressBtn").click(function(){
 		$('#serchReceiveAddress').modal({
-			remote : 'searchReceiveAddressModal.jsp'
+			remote : 'modal/searchReceiveAddressModal.jsp'
 		});
 	})
 });

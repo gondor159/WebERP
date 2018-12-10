@@ -136,8 +136,8 @@ $(function(){
 		$("#serchFieldButton").click(
 				function() {
 					$('#serchField').modal(
-							{
-								remote : 'fieldListModal.jsp?companyCode='
+						{
+							remote : 'modal/fieldListModal.jsp?companyCode='
 										+ companyCode + '&placeCode='
 										+ $('#placeCode1').val()
 							});
@@ -257,12 +257,12 @@ $(function(){
 									<input type="hidden" name="companyCode" value="<%=companyCont.getCompanyCode()%>">
 									<table class="table table-striped">
 										<tr>
-											<td style="text-align: right;">부서코드</td>
+											<td style="text-align: right;">부문코드</td>
 											<td colspan="2"><input type="text" name="fieldCode"></td>
 											<td></td>
 										</tr>
 										<tr>
-											<td style="text-align: right;">부서명</td>
+											<td style="text-align: right;">부문명</td>
 											<td colspan="2"><input type="text" name="fieldName"></td>
 											<td></td>
 										</tr>
