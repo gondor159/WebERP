@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>HOME</title>
+<title>WebERP</title>
 </head>
 <body>
 	<%
