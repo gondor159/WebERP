@@ -2,7 +2,7 @@ package rights;
 
 public class RightsDTO {
 	String rightsCode;
-	String rigtsName;
+	String rightsName;
 	
 	public String getRightsCode() {
 		return rightsCode;
@@ -10,10 +10,10 @@ public class RightsDTO {
 	public void setRightsCode(String rightsCode) {
 		this.rightsCode = rightsCode;
 	}
-	public String getRigtsName() {
-		return rigtsName;
+	public String getRightsName() {
+		return rightsName;
 	}
-	public void setRigtsName(String rigtsName) {
-		this.rigtsName = rigtsName;
+	public void setRightsName(String rigtsName) {
+		this.rightsName = rigtsName;
 	}
 }
