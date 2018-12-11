@@ -40,7 +40,7 @@ public class RightsUpdateServlet extends HttpServlet {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('수정 성공.')");
-			script.println("location.href='dbRightsinsert.jsp'");
+			script.println("location.href='dbRights.jsp'");
 			script.println("</script>");
 			script.close();
 			return;

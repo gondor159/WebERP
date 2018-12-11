@@ -28,7 +28,6 @@ public class RightsDAO {
 	public int insertrights(String rightsCode, String rightsName) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		
 		String SQL = "INSERT INTO RIGHTS VALUES(?, ?)";
 		try {
 			conn = dataSource.getConnection();
@@ -53,7 +52,6 @@ public class RightsDAO {
 	public int updaterights(String editRightsCode, String rightsCode, String rightsName) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		
 		String SQL = "UPDATE RIGHTS SET rightsCode = ?, rightsName = ? WHERE rightsCode = ?";
 		try {
 			conn = dataSource.getConnection();
@@ -79,7 +77,6 @@ public class RightsDAO {
 	public int deleterights(String rightsCode) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		
 		String SQL = "DELETE FROM RIGHTS WHERE rightsCode = ?";
 		try {
 			conn = dataSource.getConnection();

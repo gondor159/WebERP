@@ -15,7 +15,7 @@ public class EmployeeDAO {
 		try {
 			InitialContext initContext = new InitialContext();
 			Context envContext = (Context) initContext.lookup("java:/comp/env");
-			dataSource = (DataSource) envContext.lookup("jdbc/WebERP");
+			dataSource = (DataSource) envContext.lookup("jdbc/studioour");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -37,7 +37,7 @@ public class RightsInsertServlet extends HttpServlet {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('입력 성공.')");
-			script.println("location.href='dbRightsinsert.jsp'");
+			script.println("location.href='dbRights.jsp'");
 			script.println("</script>");
 			script.close();
 			return;

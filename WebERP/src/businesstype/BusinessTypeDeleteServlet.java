@@ -1,4 +1,4 @@
-package rights;
+package businesstype;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,47 +9,42 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-@WebServlet("/RightsDeleteServlet")
-public class RightsDeleteServlet extends HttpServlet {
+@WebServlet("/BusinessTypeDeleteServlet")
+public class BusinessTypeDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
+    
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-		String rightsCode = request.getParameter("rightsCode");
-
-		if (rightsCode == null || rightsCode.equals("")) {
+		String businessCondition = request.getParameter("businessCondition");
+		String businessType = request.getParameter("businessType");
+		if(businessCondition == null || businessCondition.equals("") || businessType == null || businessType.equals("")) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('모든값을 입력하세요.')");
+			script.println("alert('PK는 null이 올 수 없습니다.')");
 			script.println("history.back();");
 			script.println("</script>");
 			script.close();
 			return;
 		}
-
-		int Result = new RightsDAO().deleterights(rightsCode);
-		
-		if (Result == 1) {
+		int result = new BusinessTypeDAO().deleteType(businessCondition, businessType);
+		if(result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('삭제 성공.')");
-			script.println("location.href='dbRights.jsp'");
+			script.println("alert('삭제되었습니다.')");
+			script.println("location.href = 'dbBusinessType.jsp';");
 			script.println("</script>");
 			script.close();
 			return;
-
 		} else {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('삭제 실패.')");
+			script.println("alert('삭제에 실패 했습니다.')");
 			script.println("history.back();");
 			script.println("</script>");
 			script.close();
 			return;
 		}
 	}
+
 }
