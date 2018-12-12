@@ -20,6 +20,78 @@ public class FinancialInstitutionDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	/*DB INSERT*/
+	public int insertFinancialInstitution(String financialInstitutionCode, String financialInstitutionName) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String SQL = "INSERT INTO FINANCIALINSTITUTION VALUES(?, ?)";
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, financialInstitutionCode);
+			pstmt.setString(2, financialInstitutionName);
+			return pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null); conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return -1;
+	}
+	
+	/* DB UPDATE */
+	public int updateFinancialInstitution(String editFinancialInstitutionCode, String financialInstitutionCode, String financialInstitutionName) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String SQL = "UPDATE FINANCIALINSTITUTION SET financialinstitutionCode = ?, financialinstitutionName = ? WHERE financialinstitutionCode = ?";
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, financialInstitutionCode);
+			pstmt.setString(2, financialInstitutionName);
+			pstmt.setString(3, editFinancialInstitutionCode);
+			return pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null); conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return -1;
+	}
+	
+	/* DB DELETE*/
+	public int deleteFinancialInstitution(String financialInstitutionCode) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String SQL = "DELETE FROM FINANCIALINSTITUTION WHERE financialInstitutionCode = ?";
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, financialInstitutionCode);
+			return pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null); conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return -1;
+	}
 	/* 금융거래처 전체 검색 */
 	public ArrayList<FinancialInstitutionDTO> getFinancialInstitution() {
 		ArrayList<FinancialInstitutionDTO> list = null;
@@ -34,8 +106,8 @@ public class FinancialInstitutionDAO {
 			list = new ArrayList<FinancialInstitutionDTO>();
 			while(rs.next()) {
 				FinancialInstitutionDTO fi = new FinancialInstitutionDTO();
-				fi.setFinancialinstitutionCode(rs.getString("financialinstitutionCode"));
-				fi.setFinancialinstitutionName(rs.getString("financialinstitutionName"));
+				fi.setFinancialInstitutionCode(rs.getString("financialinstitutionCode"));
+				fi.setFinancialInstitutionName(rs.getString("financialinstitutionName"));
 				list.add(fi);
 			}
 		} catch(Exception e) {
@@ -66,8 +138,8 @@ public class FinancialInstitutionDAO {
 			list = new ArrayList<FinancialInstitutionDTO>();
 			while(rs.next()) {
 				FinancialInstitutionDTO fi = new FinancialInstitutionDTO();
-				fi.setFinancialinstitutionCode(rs.getString("financialinstitutionCode"));
-				fi.setFinancialinstitutionName(rs.getString("financialinstitutionName"));
+				fi.setFinancialInstitutionCode(rs.getString("financialinstitutionCode"));
+				fi.setFinancialInstitutionName(rs.getString("financialinstitutionName"));
 				list.add(fi);
 			}
 		} catch(Exception e) {
@@ -96,8 +168,8 @@ public class FinancialInstitutionDAO {
 			pstmt.setString(1, financialinstitutionCode);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				dto.setFinancialinstitutionCode(rs.getString("financialinstitutionCode"));
-				dto.setFinancialinstitutionName(rs.getString("financialinstitutionName"));
+				dto.setFinancialInstitutionCode(rs.getString("financialinstitutionCode"));
+				dto.setFinancialInstitutionName(rs.getString("financialinstitutionName"));
 			}
 		} catch(Exception e) {
 			e.printStackTrace();

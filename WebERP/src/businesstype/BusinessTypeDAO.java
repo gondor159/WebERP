@@ -20,6 +20,56 @@ public class BusinessTypeDAO {
 			e.printStackTrace();
 		}
 	}
+	/* 업태 종목 수정 */ 
+	public int updateType(String editBusinessCondition, String editBusinessType, String businessCondition, String businessType, String businessConditionName, String businessTypeName) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String SQL = "UPDATE BUSINESSTYPE SET businessCondition = ?, businessType = ?, businessConditionName = ?, businessTypeName = ? WHERE businessCondition =? AND businessType =?";
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, businessCondition);
+			pstmt.setString(2, businessType);
+			pstmt.setString(3, businessConditionName);
+			pstmt.setString(4, businessTypeName);
+			pstmt.setString(5, editBusinessCondition);
+			pstmt.setString(6, editBusinessType);
+			return pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null); conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return -1;
+	}
+	/* 업태 종목 삭제 */ 
+	public int deleteType(String businessCondition, String businessType) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String SQL = "DELETE FROM BUSINESSTYPE WHERE businessCondition = ? AND businessType = ?";
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, businessCondition);
+			pstmt.setString(2, businessType);
+			return pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null); conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return -1;
+	}
 	/* 업태 종목 입력 */ 
 	public int insertType(String businessCondition, String businessType, String businessConditionName, String businessTypeName) {
 		Connection conn = null;
@@ -75,6 +125,40 @@ public class BusinessTypeDAO {
 		}
 		return conditiones;
 	}
+	/* 리스트 불러오기 */
+	public ArrayList<BusinessTypeDTO> getBusinessType() {
+		ArrayList<BusinessTypeDTO> types = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String SQL = "SELECT * FROM BUSINESSTYPE";
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			types = new ArrayList<BusinessTypeDTO>();
+			while(rs.next()) {
+				BusinessTypeDTO type = new BusinessTypeDTO();
+				type.setBusinessCondition(rs.getString("businessCondition"));
+				type.setBusinessType(rs.getString("businessType"));
+				type.setBusinessConditionName(rs.getString("businessConditionName"));
+				type.setBusinessTypeName(rs.getString("businessTypeName"));
+				types.add(type);
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return types;
+	}
+	
 	/* 리스트 종목검색 */
 	public ArrayList<String[]> searchType(String businessCondition) {
 		ArrayList<String[]> types = null;

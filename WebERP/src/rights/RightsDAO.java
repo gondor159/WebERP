@@ -12,6 +12,8 @@ import javax.sql.DataSource;
 public class RightsDAO {
 	DataSource dataSource;
 
+	
+	
 	public RightsDAO() {
 		try {
 			InitialContext initContext = new InitialContext();
@@ -22,6 +24,79 @@ public class RightsDAO {
 		}
 	}
 	
+	/* DB 입력 */
+	public int insertrights(String rightsCode, String rightsName) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String SQL = "INSERT INTO RIGHTS VALUES(?, ?)";
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, rightsCode);
+			pstmt.setString(2, rightsName);
+			return pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null); conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return -1;
+	}
+	
+	/* DB 수정 */
+	public int updaterights(String editRightsCode, String rightsCode, String rightsName) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String SQL = "UPDATE RIGHTS SET rightsCode = ?, rightsName = ? WHERE rightsCode = ?";
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, rightsCode);
+			pstmt.setString(2, rightsName);
+			pstmt.setString(3, editRightsCode);
+			return pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null); conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return -1;
+	}
+	
+	/* DB 삭제 */
+	public int deleterights(String rightsCode) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String SQL = "DELETE FROM RIGHTS WHERE rightsCode = ?";
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, rightsCode);
+			return pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null); conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return -1;
+	}
+	
+	/* 리스트 불러오기 */
 	public ArrayList<RightsDTO> getRightsList() {
 		ArrayList<RightsDTO> rightList = null;
 		Connection conn = null;
@@ -36,7 +111,7 @@ public class RightsDAO {
 			while(rs.next()) {
 				RightsDTO list = new RightsDTO();
 				list.setRightsCode(rs.getString("rightsCode"));
-				list.setRigtsName(rs.getString("rightsName"));
+				list.setRightsName(rs.getString("rightsName"));
 				rightList.add(list);
 			}
 		} catch(Exception e) {

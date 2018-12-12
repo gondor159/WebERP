@@ -66,7 +66,7 @@ function registRight() {
 				%>
 				<tr class="odd gradeX">
 					<td><input type="checkbox" name="rights" value="<%= right.getRightsCode() %>"></td>
-					<td><%= right.getRigtsName() %></td>
+					<td><%= right.getRightsName() %></td>
 				</tr>
 				<%
 					}
