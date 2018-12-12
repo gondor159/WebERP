@@ -10,7 +10,7 @@
 %>
 <head>
 <meta charset="UTF-8">
-<title>BUSINESSTYPE DB controller</title>
+<title>Business DB controller</title>
 </head>
 <body>
 <form method="POST" action="./businessTypeInsertServlet">

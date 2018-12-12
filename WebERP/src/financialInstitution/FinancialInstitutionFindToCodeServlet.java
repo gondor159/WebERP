@@ -35,7 +35,7 @@ public class FinancialInstitutionFindToCodeServlet extends HttpServlet {
 		FinancialInstitutionDAO financialInstitutionDAO = new FinancialInstitutionDAO();
 		FinancialInstitutionDTO dto = financialInstitutionDAO.getFinancialInstitutionToCode(financialInstitutionCode);
 		if(dto == null) return "";
-		result.append("{\"result\":[{\"value\": \"" + dto.getFinancialinstitutionName() + "\"}]}");
+		result.append("{\"result\":[{\"value\": \"" + dto.getFinancialInstitutionName() + "\"}]}");
 		return result.toString();
 	}
 }

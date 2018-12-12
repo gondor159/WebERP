@@ -17,7 +17,7 @@
 			type : 'POST',
 			url : './financialInstitutionFindServlet',
 			data : {
-				financialinstitutionName : fiName
+				financialInstitutionName : fiName
 			},
 			success : function(data) {
 				if(data == "") {
@@ -34,7 +34,7 @@
 			}
 		});
 	}
-	function tableFinancialInstitutionResultFunction(financialinstitutionCode, financialinstitutionName) {
+	function tableFinancialInstitutionResultFunction(financialInstitutionCode, financialInstitutionName) {
 		$('#tableFinancialInstitutionResult').append('<tr><td><input type="radio" name="fiCode" value="' + financialinstitutionCode + '"></td>' +
 				'<td>' + financialinstitutionCode + '</td>' + '<td>' + financialinstitutionName + '</td></tr>');
 	}
@@ -81,9 +81,9 @@
 								FinancialInstitutionDTO fi = fiList.get(i);
 					%>
 					<tr>
-						<td><input type="radio" name="fiCode" value="<%= fi.getFinancialinstitutionCode() %>"></td>
-						<td><%= fi.getFinancialinstitutionCode() %></td>
-						<td><%= fi.getFinancialinstitutionName() %></td>
+						<td><input type="radio" name="fiCode" value="<%= fi.getFinancialInstitutionCode() %>"></td>
+						<td><%= fi.getFinancialInstitutionCode() %></td>
+						<td><%= fi.getFinancialInstitutionName() %></td>
 					</tr>
 					<%
 							}

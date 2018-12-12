@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="company.CompanyDAO"%>
 <%@ page import="company.CompanyDTO"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.io.PrintWriter"%>
+
 <%
 	String userID = null;
 	if (session.getAttribute("userID") != null) {
@@ -30,7 +30,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>WebERP</title>
+<title>회사코드 :</title>
 
 <!-- Modal table CSS -->
 <link href="../css/table.css" rel="stylesheet">
@@ -63,23 +63,21 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-
 <!-- jQuery -->
-<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.js"
-	charset="UTF-8"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.js" charset="UTF-8"></script>
 </head>
 <body>
 	<!-- Navigation -->
 	<nav class="navbar navbar-default navbar-static-top" role="navigation"
 		style="margin-bottom: 0">
-		<%@include file="../main/headNav.jsp"%>
-	 	
+		<%@include file="../main/headNav.jsp" %>
 		<!-- /.navbar-top-links -->
 
-		<%@include file="../main/sideNav.jsp"%>
-		<!-- /.navbar-static-side -->
+		<%@include file="../main/sideNav.jsp" %>
 	</nav>
-	<div id="page-wrapper"></div>
+	<div id="page-wrapper">
+		
+	</div>
 	<!-- Modal -->
 	<!-- 부서 등록 사업장 검색 -->
 	<div class="modal fade" id="searchPlace1" tabindex="-1" role="dialog"
@@ -93,7 +91,7 @@
 				</div>
 				<div class="modal-body">
 					<table class="table table-striped table-bordered table-hover">
-
+						
 					</table>
 				</div>
 				<div class="modal-footer">
@@ -110,7 +108,8 @@
 	<div class="modal fade" id="serchField" tabindex="-1" role="dialog"
 		aria-labelledby="serchFieldLabel" aria-hidden="true">
 		<div class="modal-dialog">
-			<div class="modal-content"></div>
+			<div class="modal-content">
+			</div>
 			<!-- /.modal-content -->
 		</div>
 		<!-- /.modal-dialog -->
@@ -127,7 +126,7 @@
 				</div>
 				<div class="modal-body">
 					<table class="table table-striped table-bordered table-hover">
-
+						
 					</table>
 				</div>
 				<div class="modal-footer">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" metadata-complete="true" version="3.1">
   <display-name>WebERP</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -240,5 +240,77 @@
   <servlet-mapping>
     <servlet-name>EmployeeFindToModalServlet</servlet-name>
     <url-pattern>/basisInformationManagement/employeeFindToModalServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>BusinessTypeInsertServlet</servlet-name>
+    <servlet-class>businesstype.BusinessTypeInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BusinessTypeInsertServlet</servlet-name>
+    <url-pattern>/businessTypeInsertServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>BusinessTypeUpdateServlet</servlet-name>
+    <servlet-class>businesstype.BusinessTypeUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BusinessTypeUpdateServlet</servlet-name>
+    <url-pattern>/businessTypeUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>BusinessTypeDeleteServlet</servlet-name>
+    <servlet-class>businesstype.BusinessTypeDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BusinessTypeDeleteServlet</servlet-name>
+    <url-pattern>/businessTypeDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RightsInsertServlet</servlet-name>
+    <servlet-class>rights.RightsInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RightsInsertServlet</servlet-name>
+    <url-pattern>/rightsInsertServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RightsUpdateServlet</servlet-name>
+    <servlet-class>rights.RightsUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RightsUpdateServlet</servlet-name>
+    <url-pattern>/rightsUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RightsDeleteServlet</servlet-name>
+    <servlet-class>rights.RightsDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RightsDeleteServlet</servlet-name>
+    <url-pattern>/rightsDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FinancialInstitutionInsertServlet</servlet-name>
+    <servlet-class>financialInstitution.FinancialInstitutionInsertServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FinancialInstitutionInsertServlet</servlet-name>
+    <url-pattern>/financialInstitutionInsertServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FinancialInstitutionUpdateServlet</servlet-name>
+    <servlet-class>financialInstitution.FinancialInstitutionUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FinancialInstitutionUpdateServlet</servlet-name>
+    <url-pattern>/financialInstitutionUpdateServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FinancialInstitutionDeleteServlet</servlet-name>
+    <servlet-class>financialInstitution.FinancialInstitutionDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FinancialInstitutionDeleteServlet</servlet-name>
+    <url-pattern>/financialInstitutionDeleteServlet</url-pattern>
   </servlet-mapping>
 </web-app>

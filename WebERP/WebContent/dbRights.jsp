@@ -10,10 +10,10 @@
 %>
 <head>
 <meta charset="UTF-8">
-<title>RIGHTS DB controller</title>
+<title>Rights DB controller</title>
 </head>
 <body>
-<form method="POST" action="./RightsInsertServlet">
+<form method="POST" action="./rightsInsertServlet">
 	<table>
 		<tr>
 			<td>권한코드</td>
@@ -26,7 +26,7 @@
 	</table>
 	<button type="submit">전송</button>
 </form>
-<form method="POST" action="./RightsUpdateServlet">
+<form method="POST" action="./rightsUpdateServlet">
 	<table>
 		<tr>
 			<td>수정할 권한코드</td>
@@ -43,7 +43,7 @@
 	</table>
 	<button type="submit">수정</button>
 </form>
-<form method="POST" action="./RightsDeleteServlet">
+<form method="POST" action="./rightsDeleteServlet">
 	<table>
 		<tr>
 			<td>권한코드</td>

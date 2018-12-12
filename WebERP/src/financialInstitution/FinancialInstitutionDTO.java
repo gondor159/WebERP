@@ -1,20 +1,20 @@
 package financialInstitution;
 
 public class FinancialInstitutionDTO {
-	String financialinstitutionCode;
-	String financialinstitutionName;
+	String financialInstitutionCode;
+	String financialInstitutionName;
 	
-	public String getFinancialinstitutionCode() {
-		return financialinstitutionCode;
+	public String getFinancialInstitutionCode() {
+		return financialInstitutionCode;
 	}
-	public void setFinancialinstitutionCode(String financialinstitutionCode) {
-		this.financialinstitutionCode = financialinstitutionCode;
+	public void setFinancialInstitutionCode(String financialInstitutionCode) {
+		this.financialInstitutionCode = financialInstitutionCode;
 	}
-	public String getFinancialinstitutionName() {
-		return financialinstitutionName;
+	public String getFinancialInstitutionName() {
+		return financialInstitutionName;
 	}
-	public void setFinancialinstitutionName(String financialinstitutionName) {
-		this.financialinstitutionName = financialinstitutionName;
+	public void setFinancialInstitutionName(String financialInstitutionName) {
+		this.financialInstitutionName = financialInstitutionName;
 	}
 	
 }

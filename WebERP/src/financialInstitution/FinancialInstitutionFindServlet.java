@@ -19,12 +19,12 @@ public class FinancialInstitutionFindServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
-		String financialinstitutionName = request.getParameter("financialinstitutionName");
-		if(financialinstitutionName == null || financialinstitutionName.equals("")) {
+		String financialInstitutionName = request.getParameter("financialInstitutionName");
+		if(financialInstitutionName == null || financialInstitutionName.equals("")) {
 			response.getWriter().write("");
 		} else {
 			try {
-				response.getWriter().write(getFinancialInstitutionToName(financialinstitutionName));
+				response.getWriter().write(getFinancialInstitutionToName(financialInstitutionName));
 			} catch(Exception e) {
 				e.printStackTrace();
 				response.getWriter().write("");
@@ -32,17 +32,17 @@ public class FinancialInstitutionFindServlet extends HttpServlet {
 		}
 	}
 	
-	public String getFinancialInstitutionToName(String financialinstitutionName) {
+	public String getFinancialInstitutionToName(String financialInstitutionName) {
 		StringBuffer result = new StringBuffer("");
 		result.append("{\"result\":[");
 		FinancialInstitutionDAO financialInstitutionDAO = new FinancialInstitutionDAO();
-		ArrayList<FinancialInstitutionDTO> filist = financialInstitutionDAO.getFinancialInstitutionToName(financialinstitutionName);
+		ArrayList<FinancialInstitutionDTO> filist = financialInstitutionDAO.getFinancialInstitutionToName(financialInstitutionName);
 		if(filist == null) { 
 			return ""; 
 		} else {
 			for(int i = 0; i < filist.size(); i++) {
-				result.append("[{\"value\": \"" + filist.get(i).getFinancialinstitutionCode() + "\"},");
-				result.append("{\"value\": \"" + filist.get(i).getFinancialinstitutionName() + "\"}]");
+				result.append("[{\"value\": \"" + filist.get(i).getFinancialInstitutionCode() + "\"},");
+				result.append("{\"value\": \"" + filist.get(i).getFinancialInstitutionName() + "\"}]");
 				if(i != filist.size() -1) result.append(",");
 			}
 		}
