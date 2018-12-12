@@ -7,10 +7,10 @@
 	loginTimeout="10"
 	validationQuery="SELECT 1 FROM DUAL"
 	maxWait="5000"
-	username="weberp"
-	password="weberp"
-	url="jdbc:mysql://192.168.123.139/WebERP?serverTimezone=UTC"/>
-<ResourceLink type="javax.sql.data.DataSource"
+	username="root"
+	password="imagine"
+	url="jdbc:mysql://localhost:3306/WebERP?serverTimezone=UTC" />
+	<ResourceLink type="javax.sql.data.DataSource"
 	name="jdbc/WebERP"
 	global="jdbc/WebERP"/>	
 </context>

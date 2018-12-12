@@ -17,7 +17,7 @@ public class FinancialInstitutionDAO {
 		try {
 			InitialContext initContext = new InitialContext();
 			Context envContext = (Context) initContext.lookup("java:/comp/env");
-			dataSource = (DataSource) envContext.lookup("jdbc/studioour");
+			dataSource = (DataSource) envContext.lookup("jdbc/WebERP");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -33,6 +33,7 @@ public class FinancialInstitutionDAO {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, financialinstitutionCode);
 			pstmt.setString(2, financialinstitutionName);
+			return pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {

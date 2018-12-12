@@ -17,11 +17,11 @@
 	<table>
 		<tr>
 			<td>금융기관코드</td>
-			<td><input type="text" name="FinancialInstitutionCode"></td>
+			<td><input type="text" name="financialinstitutionCode"></td>
 		</tr>
 		<tr>
 			<td>금융기관이름</td>
-			<td><input type="text" name="FinancialInstitutionName"></td>
+			<td><input type="text" name="financialinstitutionName"></td>
 		</tr>
 	</table>
 	<button type="submit">전송</button>
@@ -34,11 +34,11 @@
 		</tr>
 		<tr>
 			<td>금융기관코드</td>
-			<td><input type="text" name="FinancialInstitutionCode"></td>
+			<td><input type="text" name="financialinstitutionCode"></td>
 		</tr>
 		<tr>
 			<td>금융기관이름</td>
-			<td><input type="text" name="FinancialInstitutionName"></td>
+			<td><input type="text" name="financialinstitutionName"></td>
 		</tr>
 	</table>
 	<button type="submit">수정</button>
@@ -47,7 +47,7 @@
 	<table>
 		<tr>
 			<td>삭제할 금융기관코드</td>
-			<td><input type="text" name="FinancialInstitutionCode"></td>
+			<td><input type="text" name="financialinstitutionCode"></td>
 		</tr>
 	</table>
 	<button type="submit">삭제</button>
@@ -75,10 +75,5 @@
 		%>
 	</tbody>
 </table>
-
-
-
-
-
 </body>
 </html>
