@@ -11,16 +11,90 @@ import javax.sql.DataSource;
 
 public class FinancialInstitutionDAO {
 	DataSource dataSource;
+	
+	
 	public FinancialInstitutionDAO() {
 		try {
 			InitialContext initContext = new InitialContext();
 			Context envContext = (Context) initContext.lookup("java:/comp/env");
-			dataSource = (DataSource) envContext.lookup("jdbc/WebERP");
+			dataSource = (DataSource) envContext.lookup("jdbc/studioour");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	/* ±ÝÀ¶°Å·¡Ã³ ÀüÃ¼ °Ë»ö */
+	
+	/*DB INSERT*/
+	public int insertfinancialinstitution(String financialinstitutionCode, String financialinstitutionName) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String SQL = "INSERT INTO FINANCIALINSTITUTION VALUES(?, ?)";
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, financialinstitutionCode);
+			pstmt.setString(2, financialinstitutionName);
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null); conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return -1;
+	}
+	
+	/* DB UPDATE */
+	public int updatefinancialinstitution(String editFinancialInstitutionCode, String financialinstitutionCode, String financialinstitutionName) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String SQL = "UPDATE FINANCIALINSTITUTION SET financialinstitutionCode = ?, financialinstitutionName = ? WHERE financialinstitutionCode = ?";
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, financialinstitutionCode);
+			pstmt.setString(2, financialinstitutionName);
+			pstmt.setString(3, editFinancialInstitutionCode);
+			return pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null); conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return -1;
+	}
+	
+	/* DB DELETE*/
+	public int deletefinancialinstitution(String financialinstitutionCode) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String SQL = "DELETE FROM FINANCIALINSTITUTION WHERE financialinstitutionCode = ?";
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, financialinstitutionCode);
+			return pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null); conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return -1;
+	}
+	
+	/* ï¿½ï¿½ï¿½ï¿½ï¿½Å·ï¿½Ã³ ï¿½ï¿½Ã¼ ï¿½Ë»ï¿½ */
 	public ArrayList<FinancialInstitutionDTO> getFinancialInstitution() {
 		ArrayList<FinancialInstitutionDTO> list = null;
 		Connection conn = null;
@@ -51,7 +125,7 @@ public class FinancialInstitutionDAO {
 		}
 		return list;
 	}
-	/* ±ÝÀ¶°Å·¡Ã³ ÀÌ¸§ °Ë»ö */
+	/* ï¿½ï¿½ï¿½ï¿½ï¿½Å·ï¿½Ã³ ï¿½Ì¸ï¿½ ï¿½Ë»ï¿½ */
 	public ArrayList<FinancialInstitutionDTO> getFinancialInstitutionToName(String financialinstitutionName) {
 		ArrayList<FinancialInstitutionDTO> list = null;
 		Connection conn = null;
@@ -83,7 +157,7 @@ public class FinancialInstitutionDAO {
 		}
 		return list;
 	}
-	/* ±ÝÀ¶°Å·¡Ã³ ÄÚµå·Î °Ë»ö */
+	/* ï¿½ï¿½ï¿½ï¿½ï¿½Å·ï¿½Ã³ ï¿½Úµï¿½ï¿½ ï¿½Ë»ï¿½ */
 	public FinancialInstitutionDTO getFinancialInstitutionToCode(String financialinstitutionCode) {
 		FinancialInstitutionDTO dto = new FinancialInstitutionDTO();
 		Connection conn = null;
