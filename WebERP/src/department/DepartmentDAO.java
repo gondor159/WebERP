@@ -20,7 +20,7 @@ public class DepartmentDAO {
 			e.printStackTrace();
 		}
 	}
-	/* ºÎ¼­µî·Ï */
+	/* ë¶€ì„œë“±ë¡ */
 	public int registDepartment(String companyCode, String fieldCode, String departmentCode, String departmentName) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -45,7 +45,7 @@ public class DepartmentDAO {
 		}
 		return -1;
 	}
-	/* ¸®½ºÆ® ºÎ¼­ °Ë»ö  (È¸»çÄÚµå)*/
+	/* ë¦¬ìŠ¤íŠ¸ ë¶€ì„œ ê²€ìƒ‰  (íšŒì‚¬ì½”ë“œ) */
 	public ArrayList<DepartmentDTO> getDepartmentList(String companyCode) {
 		 ArrayList<DepartmentDTO> departmentList = null;
 		 Connection conn = null;
@@ -79,7 +79,7 @@ public class DepartmentDAO {
 			}
 			return departmentList;
 	}
-	/* ¸®½ºÆ® ºÎ¼­ °Ë»ö  (È¸»çÄÚµå, »ç¾÷ÀåÄÚµå)*/
+	/* ë¦¬ìŠ¤íŠ¸ ë¶€ì„œ ê²€ìƒ‰  (íšŒì‚¬ì½”ë“œ, ì‚¬ì—…ì¥ì½”ë“œ) */
 	public ArrayList<DepartmentDTO> getDepartmentList(String companyCode, String fieldCode) {
 		 ArrayList<DepartmentDTO> departmentList = null;
 		 Connection conn = null;
@@ -114,7 +114,7 @@ public class DepartmentDAO {
 			}
 			return departmentList;
 	}
-	/* ¸®½ºÆ® ºÎ¼­ °Ë»ö  (È¸»çÄÚµå)*/
+	/* ë¦¬ìŠ¤íŠ¸ ë¶€ì„œ ê²€ìƒ‰  (íšŒì‚¬ì½”ë“œ) */
 	public ArrayList<DepartmentDTO> getDepartmentListToCompanyCode(String companyCode) {
 		ArrayList<DepartmentDTO> departmentList = null;
 		Connection conn = null;
@@ -148,7 +148,7 @@ public class DepartmentDAO {
 		}
 			return departmentList;
 	}
-	/* ¸®½ºÆ® ºÎ¼­ °Ë»ö  (È¸»çÄÚµå, ºÎ¼­¸í)*/
+	/* ë¦¬ìŠ¤íŠ¸ ë¶€ì„œ ê²€ìƒ‰  (íšŒì‚¬ì½”ë“œ, ë¶€ì„œëª…) */
 	public ArrayList<DepartmentDTO> getDepartmentListToDepartmentName(String companyCode, String departmentName) {
 		 ArrayList<DepartmentDTO> departmentList = null;
 		 Connection conn = null;
@@ -183,7 +183,7 @@ public class DepartmentDAO {
 			}
 			return departmentList;
 	}
-	/* ºÎ¼­ ÀÌ¸§ °Ë»ö */
+	/* ë¶€ì„œ ì´ë¦„ ê²€ìƒ‰ */
 	public String getDepartmentName(String companyCode, String fieldCode, String departmentCode) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -212,7 +212,7 @@ public class DepartmentDAO {
 		}
 		return "";
 	}
-	/* ºÎ¼­ ÀÌ¸§ °Ë»ö */
+	/* ë¶€ì„œ ì´ë¦„ ê²€ìƒ‰ */
 	public String getDepartmentNameOnly(String companyCode, String departmentCode) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;

@@ -20,7 +20,7 @@ public class EmployeeDAO {
 			e.printStackTrace();
 		}
 	}
-	/* »ç¿øµî·Ï */
+	/* ì‚¬ì›ë“±ë¡ */
 	public int registEmployee(String companyCode, String employeeNum, String placeCode, String userID, String fieldCode, String departmentCode, String positionCode, String allowance, String allowanceType, String joinDate) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -52,7 +52,7 @@ public class EmployeeDAO {
 		}
 		return -1;
 	}
-	/* ´ÜÀÏ »ç¿øÃ£±â (¾ÆÀÌµğ) */
+	/* ë‹¨ì¼ ì‚¬ì›ì°¾ê¸° (ì•„ì´ë””) */
 	public EmployeeDTO getEmployee(String userID) {
 		EmployeeDTO employee = new EmployeeDTO();
 		Connection conn = null;
@@ -90,7 +90,7 @@ public class EmployeeDAO {
 		}
 		return employee;
 	}
-	/* ¸®½ºÆ® »ç¿øÃ£±â (È¸»çÄÚµå) */
+	/* ë¦¬ìŠ¤íŠ¸ ì‚¬ì›ì°¾ê¸° (íšŒì‚¬ì½”ë“œ) */
 	public ArrayList<EmployeeDTO> getEmployeeListToCompany(String companyCode) {
 		ArrayList<EmployeeDTO> employeeList = null;
 		Connection conn = null;
@@ -131,7 +131,7 @@ public class EmployeeDAO {
 		}
 		return employeeList;
 	}
-	/* ¸®½ºÆ® »ç¿øÃ£±â (ºÎ¹®ÄÚµå) */
+	/* ë¦¬ìŠ¤íŠ¸ ì‚¬ì›ì°¾ê¸° (ë¶€ë¬¸ì½”ë“œ) */
 	public ArrayList<EmployeeDTO> getEmployeeListToField(String companyCode, String fieldCode) {
 		ArrayList<EmployeeDTO> employeeList = null;
 		Connection conn = null;
@@ -172,7 +172,7 @@ public class EmployeeDAO {
 		}
 		return employeeList;
 	}
-	/* ¸®½ºÆ® »ç¿øÃ£±â (ºÎ¼­) */
+	/* ë¦¬ìŠ¤íŠ¸ ì‚¬ì›ì°¾ê¸° (ë¶€ì„œ) */
 	public ArrayList<EmployeeDTO> getEmployeeListToDepartment(String companyCode, String fieldCode, String departmentCode) {
 		ArrayList<EmployeeDTO> employeeList = null;
 		Connection conn = null;
@@ -214,7 +214,7 @@ public class EmployeeDAO {
 		}
 		return employeeList;
 	}
-	/* ¸®½ºÆ® »ç¿øÃ£±â (Á÷À§) */
+	/* ë¦¬ìŠ¤íŠ¸ ì‚¬ì›ì°¾ê¸° (ì§ìœ„) */
 	public ArrayList<EmployeeDTO> getEmployeeListToPosition(String companyCode, String positionCode) {
 		ArrayList<EmployeeDTO> employeeList = null;
 		Connection conn = null;
@@ -255,7 +255,7 @@ public class EmployeeDAO {
 		}
 		return employeeList;
 	}
-	/* ´ÜÀÏ »ç¿øÃ£±â (È¸»çÄÚµå, »ç¿ø¹øÈ£) */
+	/* ë‹¨ì¼ ì‚¬ì›ì°¾ê¸° (íšŒì‚¬ì½”ë“œ, ì‚¬ì›ë²ˆí˜¸) */
 	public EmployeeDTO findEmployee(String companyCode, String employeeNum) {
 		EmployeeDTO employee = new EmployeeDTO();
 		Connection conn = null;

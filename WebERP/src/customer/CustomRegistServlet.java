@@ -66,7 +66,7 @@ public class CustomRegistServlet extends HttpServlet {
 				|| customerName == null || customerName.equals("") || businessLicenseNum == null || businessLicenseNum.equals("")) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('*Àº ÇÊ¼ö ÀÔ·ÂÀÔ´Ï´Ù.')");
+			script.println("alert('*ì€ í•„ìˆ˜ ì…ë ¥ì…ë‹ˆë‹¤.')");
 			script.println("location.href = 'generalCustomerRegist.jsp'");
 			script.println("</script>");
 			script.close();
@@ -97,7 +97,7 @@ public class CustomRegistServlet extends HttpServlet {
 		if (result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('°Å·¡Ã³°¡ µî·Ï µÇ¾ú½À´Ï´Ù.')");
+			script.println("alert('ê±°ë˜ì²˜ê°€ ë“±ë¡ ë˜ì—ˆìŠµë‹ˆë‹¤.')");
 			script.println("location.href = 'generalCustomerRegist.jsp'");
 			script.println("</script>");
 			script.close();
@@ -105,7 +105,7 @@ public class CustomRegistServlet extends HttpServlet {
 		} else {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('ÁË¼ÛÇÕ´Ï´Ù. ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.')");
+			script.println("alert('ë°ì´í„°ë² ì´ìŠ¤ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.')");
 			script.println("location.href = 'generalCustomerRegist.jsp'");
 			script.println("</script>");
 			script.close();

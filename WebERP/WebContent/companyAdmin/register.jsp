@@ -34,41 +34,33 @@
 
 <title>회사 정보 등록</title>
 
-<!-- Modal table CSS -->
-<link href="../css/table.css" rel="stylesheet">
-
-<!-- Bootstrap Core CSS -->
-<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- MetisMenu CSS -->
-<link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-<!-- DataTables CSS -->
-<link href="../vendor/datatables-plugins/dataTables.bootstrap.css"
-	rel="stylesheet">
-
-<!-- DataTables Responsive CSS -->
-<link href="../vendor/datatables-responsive/dataTables.responsive.css"
-	rel="stylesheet">
-
-<!-- Custom CSS -->
-<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-<!-- Custom Fonts -->
-<link href="../vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
+<!-- CSS -->
+	<!-- Modal table CSS -->
+	<link href="../css/table.css" rel="stylesheet">
+	<!-- Bootstrap Core CSS -->
+	<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- MetisMenu CSS -->
+	<link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+	<!-- DataTables CSS -->
+	<link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+	<!-- DataTables Responsive CSS -->
+	<link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+	<!-- Custom Fonts -->
+	<link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+	<![endif]-->
+<!-- /CSS -->
 
-<!-- 주소검색 스크립트 -->
-<script type="text/javascript"
-	src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
-	charset="UTF-8"></script>
-<script type="text/javascript" src="../js/searchAdd.js" charset="UTF-8"></script>
+<!-- jQuery -->
+	<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.js" charset="UTF-8"></script>
+<!-- /jQuery -->
+
 <!-- function -->
 <script>
 	/* 주소 등록 */
@@ -130,16 +122,30 @@
 		$('#businessType').attr('value', typeSelecet);
 	}
 </script>
+
+<!-- Button 활성화 -->
+<script>
+$(function(){
+	/* 주소 검색 버튼 */
+	$("#searchAddressBtn").click(function(){
+		$('#searchAddress').modal({
+			remote : 'modal/searchAddressModal.jsp'
+		});
+	})
+	/* 업태 종목 검색 버튼 */
+	$("#searchTypeBtn").click(function(){
+		$('#searchType').modal({
+			remote : 'modal/searchTypeModal.jsp'
+		});
+	})
+});
+</script>
 </head>
 <body>
-	<!-- Navigation -->
 	<nav class="navbar navbar-default navbar-static-top" role="navigation"
 		style="margin-bottom: 0">
 		<%@include file="../main/headNav.jsp"%>
-		<!-- /.navbar-top-links -->
-
 		<%@include file="../main/sideNav.jsp" %>
-		<!-- /.navbar-static-side -->
 	</nav>
 	<div id="page-wrapper">
 		<div class="row">
@@ -192,13 +198,9 @@
 								%>
 							</tbody>
 						</table>
-						<!-- /.table-responsive -->
 					</div>
-					<!-- /.panel-body -->
 				</div>
-				<!-- /.panel -->
 			</div>
-			<!-- /.col-lg-6 -->
 			<div class="col-lg-6">
 				<form class="row" role="form" method="POST" action="./companyRegisterServlet">
 					<h1 class="page-header">회사등록</h1>
@@ -217,79 +219,77 @@
 										<input type="hidden" name="chiefID" value="<%= userID %>"><br>
 										<table class="table table-striped">
 											<tr>
-												<td style="text-align: right;">사업자 등록번호</td>
-												<td colspan="2"><input type="text" name="businessLicenseNum" placeholder="'-'을 제외하고 입력하세요."></td>
+												<td style="text-align: right;"><h5>사업자 등록번호</h5></td>
+												<td><input class="form-control" type="text" name="businessLicenseNum" placeholder="'-'을 제외하고 입력하세요."></td>
+												<td colspan="2"></td>
+											</tr>
+											<tr>
+												<td style="text-align: right;"><h5>회사명</h5></td>
+												<td colspan="3"><input class="form-control" type="text" name="companyName"></td>
+											</tr>
+											<tr>
+												<td style="text-align: right;"><h5>본점 우편 번호</h5></td>
+												<td><input class="form-control" type="text" maxlength="5" id="postNum" name="postNum" readonly></td>
+												<td><button class="btn btn-default" id="searchAddressBtn" type="button"><i class="fa fa-search-plus"></i></button></td>
 												<td></td>
 											</tr>
 											<tr>
-												<td style="text-align: right;">회사명</td>
-												<td colspan="2"><input type="text" name="companyName"></td>
-												<td></td>
+												<td style="text-align: right;"><h5>본점 주소</h5></td>
+												<td colspan="3"><input class="form-control" type="text" id="address" name="address" readonly></td>
 											</tr>
 											<tr>
-												<td style="text-align: right;">본점 우편 번호</td>
-												<td><input type="text" maxlength="5" id="postNum" name="postNum" style="width: 20%"></td>
-												<td><button class="btn btn-default" type="button" data-toggle="modal" data-target="#searchAddress"><i class="fa fa-search-plus"></i></button></td>
-												<td></td>
+												<td style="text-align: right;"><h5>회사 전화번호</h5></td>
+												<td><input class="form-control" type="text" name="tel"></td>
+												<td colspan="2"></td>
 											</tr>
 											<tr>
-												<td style="text-align: right;">본점 주소</td>
-												<td colspan="3"><input type="text" id="address" name="address" style="width: 85%"></td>
-											</tr>
-											<tr>
-												<td style="text-align: right;">회사 전화번호</td>
-												<td colspan="2"><input type="text" name="tel"></td>
-												<td></td>
-											</tr>
-											<tr>
-                            					<td style="text-align: right;">업태</td>
-                            					<td><input id="businessCondition" type="text" name="businessCondition" readonly></td>
-                            					<td style="text-align: left;"><button class="btn btn-default" data-toggle="modal" data-target="#business" type="button"><i class="fa fa-search-plus "></i></button></td>
-                            					<td><input id="businessConditionName" type="text" readonly></td>
+                            					<td style="text-align: right;"><h5>업태</h5></td>
+                            					<td><input class="form-control" id="businessCondition" type="text" name="businessCondition" readonly></td>
+                            					<td style="text-align: left;"><button class="btn btn-default" id="searchTypeBtn" type="button"><i class="fa fa-search-plus "></i></button></td>
+                            					<td><input class="form-control" id="businessConditionName" type="text" readonly></td>
                             				</tr>
                             				<tr>
-                            					<td style="text-align: right;">종목</td>
-                            					<td><input id="businessType" type="text" name="businessType" readonly></td>
+                            					<td style="text-align: right;"><h5>종목</h5></td>
+                            					<td><input class="form-control" id="businessType" type="text" name="businessType" readonly></td>
                             					<td style="text-align: left;"></td>
-                            					<td><input id="businessTypeName" type="text" readonly></td>
+                            					<td><input class="form-control" id="businessTypeName" type="text" readonly></td>
                             				</tr>
                             				<tr>
-                            					<td style="text-align: right;">설립연월일</td>
-                            					<td><input type="date" placeholder="YYYY-MM-DD" name="establishmentDate"></td>
+                            					<td style="text-align: right;"><h5>설립연월일</h5></td>
+                            					<td><input class="form-control" type="date" placeholder="YYYY-MM-DD" name="establishmentDate"></td>
                             					<td style="text-align: right;">개업연월일</td>
-                            					<td><input type="date" placeholder="YYYY-MM-DD" name="startDate"></td>
+                            					<td><input class="form-control" type="date" placeholder="YYYY-MM-DD" name="startDate"></td>
                             				</tr>
 										</table>
 									</div>
 									<div class="tab-pane fade" id="addSession">
 										<table class="table table-striped">
 											<tr>
-												<td style="text-align: right;">법인 등록번호</td>
-												<td colspan="2"><input type="text" name="corporateLicenseNum" placeholder="'-'을 제외하고 입력하세요."></td>
-												<td></td>
+												<td style="text-align: right;"><h5>법인 등록번호</h5></td>
+												<td><input class="form-control" type="text" name="corporateLicenseNum" placeholder="'-'을 제외하고 입력하세요."></td>
+												<td colspan="2"></td>
 											</tr>
 											<tr>
-												<td style="text-align: right;">회사 영문명</td>
-												<td colspan="2"><input type="text" name="companyEngName"></td>
-												<td></td>
+												<td style="text-align: right;"><h5>회사 영문명</h5></td>
+												<td colspan="3"><input class="form-control" type="text" name="companyEngName"></td>
 											</tr>
 											<tr>
-												<td style="text-align: right;">회사 영문주소</td>
-												<td colspan="3"><input type="text" name="addressEng" style="width: 85%"></td>
+												<td style="text-align: right;"><h5>회사 영문주소</h5></td>
+												<td colspan="3"><input class="form-control" type="text" name="addressEng"></td>
 											</tr>
 											<tr>
-												<td style="text-align: right;">회사 팩스번호</td>
-												<td colspan="2"><input type="text" name="fax"></td>
-												<td></td>
+												<td style="text-align: right;"><h5>회사 팩스번호</h5></td>
+												<td><input class="form-control" type="text" name="fax"></td>
+												<td colspan="2"></td>
 											</tr>
 											<tr>
-												<td style="text-align: right;">회사 홈페이지</td>
-												<td colspan="3"><input type="text" name="homepage" style="width: 70%"></td>
+												<td style="text-align: right;"><h5>회사 홈페이지</h5></td>
+												<td colspan="3"><input class="form-control" type="text" name="homepage"></td>
 											</tr>
 											<tr>
-                            					<td style="text-align: right;">환종</td>
-                            					<td colspan="2">
-                            						<select style="width: 30%; height: 25px;" name="monetaryUnit">
+                            					<td style="text-align: right;"><h5>환종</h5></td>
+                            					<td>
+                            						<select class="form-control" name="monetaryUnit">
 														<option value="KRW">￦ KRW</option>
 														<option value="USD">$ USD</option>
 														<option value="JPY">￥ JPY</option>
@@ -297,24 +297,18 @@
 														<option value="EUR">€ EUR</option>
 													</select>
                             					</td>
-                            					<td><p class="help-block">선택하지 않으면 KRW로 등록됩니다.</p></td>
+                            					<td colspan="2"><p class="help-block">선택하지 않으면 KRW로 등록됩니다.</p></td>
                             				</tr>
 										</table>
 									</div>
-									<!-- /.col-lg-6 (nested) -->
 								</div>
-								<!-- /.row (nested) -->
 								<button class="btn btn-outline btn-primary btn-lg btn-block" type="submit">등록</button>
 							</div>
-							<!-- /.panel-body -->
 						</div>
-						<!-- /.panel -->
 					</div>
-					<!-- /.col-lg-6 -->
 				</form>
 			</div>
 		</div>
-		<!-- /.row -->
 	</div>
 	<!-- Modal -->
 	<!-- 주소 검색 -->
@@ -322,120 +316,16 @@
 		aria-labelledby="searchAddressLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="searchAddressLabel">주소 검색</h4>
-				</div>
-				<div class="modal-body">
-					<div class="row" id="postcodify"></div>
-					<!-- Postcodify 셋팅 -->
-
-					<script type="text/javascript">
-						$("#postcodify")
-								.postcodify(
-										{
-											insertPostcode5 : "#entry_postcode5",
-											insertAddress : "#entry_address",
-											insertDetails : "#entry_details",
-											insertExtraInfo : "#entry_extra_info",
-											insertEnglishAddress : "#entry_english_address",
-											insertJibeonAddress : "#entry_jibeon_address",
-											useFullJibeon : true,
-											mapLinkProvider : "google",
-											ready : function() {
-												$(
-														"#postcodify div.postcode_search_status.empty")
-														.hide();
-											},
-											beforeSearch : function(keywords) {
-												$("#entry_box").hide();
-											},
-											afterSelect : function(
-													selectedEntry) {
-												$(
-														"#postcodify div.postcode_search_result")
-														.remove();
-												$(
-														"#postcodify div.postcode_search_status.summary")
-														.hide();
-												$("#entry_box").show();
-												$("#entry_details").focus();
-											}
-										});
-					</script>
-					<div>
-						<p>
-							<label for="entry_postcode6">우편번호</label><input type="text"
-								class="form-control" id="entry_postcode5" readonly>
-						</p>
-						<p>
-							<label for="entry_address">도로명주소</label><input type="text"
-								class="form-control" id="entry_address" readonly>
-						</p>
-						<p>
-							<label for="entry_address">참고항목</label><input type="text"
-								class="form-control" id="entry_extra_info" readonly>
-						</p>
-						<p>
-							<label for="entry_details">상세주소</label><input type="text"
-								class="form-control" id="entry_details" />
-						</p>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-					<button type="button" class="btn btn-primary"
-						onclick="insertAddFunction();" data-dismiss="modal">확인</button>
-				</div>
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 업태/종목 검색 -->
-	<div class="modal fade" id="business" tabindex="-1" role="dialog"
-		aria-labelledby="businessLabel" aria-hidden="true">
+	<div class="modal fade" id="searchType" tabindex="-1" role="dialog"
+		aria-labelledby="searchTypeLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="businessLabel">업태/종목 선택</h4>
-				</div>
-				<div class="modal-body">
-					<div class="form-group">
-						<label>업태</label> <select class="form-control"
-							name="conditionSelect" id="conditionSelect">
-							<%
-								for (int i = 0; i < businessConditionList.size(); i++) {
-							%>
-							<option value="<%=businessConditionList.get(i)[0]%>"><%=businessConditionList.get(i)[1]%></option>
-							<%
-								}
-							%>
-						</select>
-					</div>
-					<div class="form-group float-right">
-						<button type="button" class="btn btn-default"
-							onclick="printType();">검색</button>
-					</div>
-					<div class="form-group">
-						<label>종목</label> <select class="form-control" name="typeSelect"
-							id="typeSelect">
-
-						</select>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-					<button type="button" class="btn btn-primary"
-						onclick="insertConTypeFunction();" data-dismiss="modal">확인</button>
-				</div>
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 세무서 검색 -->
 	<div class="modal fade" id="searchTaxOfiice" tabindex="-1"
@@ -453,9 +343,7 @@
 					<button type="button" class="btn btn-primary">Save changes</button>
 				</div>
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 주민납세지 검색 -->
 	<div class="modal fade" id="searchresidentPayment" tabindex="-1"
@@ -475,27 +363,22 @@
 					<button type="button" class="btn btn-primary">Save changes</button>
 				</div>
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
+	
+<!-- JavaScript -->
 	<!-- jQuery -->
 	<script src="../vendor/jquery/jquery.min.js"></script>
-
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-
 	<!-- Metis Menu Plugin JavaScript -->
 	<script src="../vendor/metisMenu/metisMenu.min.js"></script>
-
 	<!-- DataTables JavaScript -->
 	<script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
 	<script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
 	<script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
-
 	<!-- Custom Theme JavaScript -->
 	<script src="../dist/js/sb-admin-2.js"></script>
-
 	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
 	<script>
 		$(document).ready(function() {
@@ -514,5 +397,6 @@
 		// popover demo
 		$("[data-toggle=popover]").popover()
 	</script>
+<!-- JavaScript -->
 </body>
 </html>

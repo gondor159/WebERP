@@ -21,7 +21,7 @@ public class CustomerDAO {
 			e.printStackTrace();
 		}
 	}
-	/* °Å·¡Ã³ µî·Ï */
+	/* ê±°ë˜ì²˜ ë“±ë¡ */
 	public int registCustom(String companyCode, String customCode, String division, String customerName, String businessLicenseNum, 
 			String chiefName, String postNum, String address, String tel, String fax, String businessCondition, String businessType, 
 			String homepage, String monetaryUnit, String project, String customGroup, String customGrade, String collectCompany, 
@@ -95,7 +95,7 @@ public class CustomerDAO {
 		}
 		return -1;
 	}
-	/* ÇØ´ç È¸»çÀÇ °Å·¡Ã³ ÀüÃ¼ °Ë»ö */
+	/* ë¦¬ìŠ¤íŠ¸ í•´ë‹¹ íšŒì‚¬ì˜ ê±°ë˜ì²˜ ê²€ìƒ‰ */
 	public ArrayList<CustomerDTO> getCustomerListToCompanyCode(String companyCode) {
 		ArrayList<CustomerDTO> customerList = null;
 		Connection conn = null;
@@ -171,7 +171,7 @@ public class CustomerDAO {
 		}
 		return customerList;
 	}
-	/* ÇØ´ç È¸»çÀÇ °Å·¡Ã³ ÀÌ¸§À¸·Î °Ë»ö */
+	/* ë¦¬ìŠ¤íŠ¸ í•´ë‹¹ íšŒì‚¬ì˜ ê±°ë˜ì²˜ ê²€ìƒ‰ (íšŒì‚¬ëª…) */
 	public ArrayList<CustomerDTO> getCustomerListToName(String companyCode, String customerName) {
 		ArrayList<CustomerDTO> customerList = null;
 		Connection conn = null;
@@ -248,7 +248,7 @@ public class CustomerDAO {
 		}
 		return customerList;
 	}
-	/* ÇØ´ç È¸»çÀÇ °Å·¡Ã³ ÄÚµå·Î °Ë»ö */
+	/* ë¦¬ìŠ¤íŠ¸ í•´ë‹¹ íšŒì‚¬ì˜ ê±°ë˜ì²˜ ê²€ìƒ‰ (ê±°ë˜ì²˜ ì½”ë“œ) */
 	public CustomerDTO getCustomerListToCustomCode(String companyCode, String customCode) {
 		CustomerDTO customer = null;
 		Connection conn = null;
@@ -323,7 +323,7 @@ public class CustomerDAO {
 		}
 		return customer;
 	}
-	/* ÇØ´ç È¸»çÀÇ °Å·¡Ã³ »ç¾÷ÀÚµî·Ï¹øÈ£·Î °Ë»ö */
+	/* ë‹¨ì¼ í•´ë‹¹ íšŒì‚¬ì˜ ê±°ë˜ì²˜ ê²€ìƒ‰ (ì‚¬ì—…ìë“±ë¡ë²ˆí˜¸) */
 	public ArrayList<CustomerDTO> getCustomerListToBusinessLicenseNum(String companyCode, String businessLicenseNum) {
 		ArrayList<CustomerDTO> customerList = null;
 		Connection conn = null;
@@ -401,6 +401,7 @@ public class CustomerDAO {
 		return customerList;
 	}
 	
+	/* ë‹¨ì¼ ê±°ë˜ì²˜ëª… ê²€ìƒ‰ */
 	public String getCustomerName(String companyCode, String customCode) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;

@@ -20,7 +20,7 @@ public class BusinessTypeDAO {
 			e.printStackTrace();
 		}
 	}
-	/* ¾÷ÅÂ Á¾¸ñ ¼öÁ¤ */ 
+	/* ì—…íƒœ ì¢…ëª© ìˆ˜ì • */ 
 	public int updateType(String editBusinessCondition, String editBusinessType, String businessCondition, String businessType, String businessConditionName, String businessTypeName) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -47,7 +47,7 @@ public class BusinessTypeDAO {
 		}
 		return -1;
 	}
-	/* ¾÷ÅÂ Á¾¸ñ »èÁ¦ */ 
+	/* ì—…íƒœ ì¢…ëª© ì‚­ì œ */ 
 	public int deleteType(String businessCondition, String businessType) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -70,7 +70,7 @@ public class BusinessTypeDAO {
 		}
 		return -1;
 	}
-	/* ¾÷ÅÂ Á¾¸ñ ÀÔ·Â */ 
+	/* ì—…íƒœ ì¢…ëª© ì…ë ¥ */ 
 	public int insertType(String businessCondition, String businessType, String businessConditionName, String businessTypeName) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -95,7 +95,7 @@ public class BusinessTypeDAO {
 		}
 		return -1;
 	}
-	/* ¸®½ºÆ® ¾÷ÅÂ°Ë»ö */
+	/* ë¦¬ìŠ¤íŠ¸ ì—…íƒœê²€ìƒ‰ */
 	public ArrayList<String[]> searchCondition() {
 		ArrayList<String[]> conditiones = null;
 		Connection conn = null;
@@ -125,7 +125,7 @@ public class BusinessTypeDAO {
 		}
 		return conditiones;
 	}
-	/* ¸®½ºÆ® ºÒ·¯¿À±â */
+	/* ë¦¬ìŠ¤íŠ¸ ë¶ˆëŸ¬ì˜¤ê¸° */
 	public ArrayList<BusinessTypeDTO> getBusinessType() {
 		ArrayList<BusinessTypeDTO> types = null;
 		Connection conn = null;
@@ -159,7 +159,7 @@ public class BusinessTypeDAO {
 		return types;
 	}
 	
-	/* ¸®½ºÆ® Á¾¸ñ°Ë»ö */
+	/* ë¦¬ìŠ¤íŠ¸ ì¢…ëª©ê²€ìƒ‰ */
 	public ArrayList<String[]> searchType(String businessCondition) {
 		ArrayList<String[]> types = null;
 		Connection conn = null;
@@ -190,7 +190,7 @@ public class BusinessTypeDAO {
 		}
 		return types;
 	}
-	/* ´ÜÀÏ ¾÷ÅÂ Á¾¸ñ °Ë»ö */
+	/* ë‹¨ì¼ ì—…íƒœ ì¢…ëª© ê²€ìƒ‰ */
 	public BusinessTypeDTO getBusinessType(String businessCondition, String businessType) {
 		BusinessTypeDTO businessConType = new BusinessTypeDTO();
 		Connection conn = null;

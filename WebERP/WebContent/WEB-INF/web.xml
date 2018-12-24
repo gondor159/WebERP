@@ -321,4 +321,28 @@
     <servlet-name>FinancialInstitutionDeleteServlet</servlet-name>
     <url-pattern>/developer/financialInstitutionDeleteServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>ProjectGroupRegistServlet</servlet-name>
+    <servlet-class>projectgroup.ProjectGroupRegistServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProjectGroupRegistServlet</servlet-name>
+    <url-pattern>/basisInformationManagement/projectGroupRegistServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ProjectGroupGetListServlet</servlet-name>
+    <servlet-class>projectgroup.ProjectGroupGetListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProjectGroupGetListServlet</servlet-name>
+    <url-pattern>/basisInformationManagement/projectGroupGetListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ProjectGroupGetServlet</servlet-name>
+    <servlet-class>projectgroup.ProjectGroupGetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProjectGroupGetServlet</servlet-name>
+    <url-pattern>/basisInformationManagement/projectGroupGetServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

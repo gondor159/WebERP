@@ -37,7 +37,7 @@ public class UserJoinServlet extends HttpServlet {
 				|| phoneNum.equals("") || email == null || email.equals("")) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('¸ğµç ³»¿ëÀ» ÀÔ·ÂÇÏ¼¼¿ä.')");
+			script.println("alert('ëª¨ë“  ë‚´ìš©ì„ ì…ë ¥í•˜ì„¸ìš”.')");
 			script.println("location.href = 'join.jsp'");
 			script.println("</script>");
 			script.close();
@@ -46,7 +46,7 @@ public class UserJoinServlet extends HttpServlet {
 		if(!userPassword.equals(userPasswordRe)) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇÏ¼¼¿ä.')");
+			script.println("alert('ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•˜ì„¸ìš”.')");
 			script.println("location.href = 'join.jsp'");
 			script.println("</script>");
 			script.close();
@@ -57,7 +57,7 @@ public class UserJoinServlet extends HttpServlet {
 			request.getSession().setAttribute("userID", userID);
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('È¸¿ø°¡ÀÔ¿¡ ¼º°øÇß½À´Ï´Ù.')");
+			script.println("alert('íšŒì›ê°€ì…ì— ì„±ê³µí–ˆìŠµë‹ˆë‹¤.')");
 			script.println("location.href = 'index.jsp'");
 			script.println("</script>");
 			script.close();
@@ -65,7 +65,7 @@ public class UserJoinServlet extends HttpServlet {
 		} else {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('ÀÌ¹Ì Á¸ÀçÇÏ´Â È¸¿øÀÔ´Ï´Ù.')");
+			script.println("alert('ì´ë¯¸ ì¡´ì¬í•˜ëŠ” íšŒì›ì…ë‹ˆë‹¤.')");
 			script.println("location.href = 'join.jsp'");
 			script.println("</script>");
 			script.close();

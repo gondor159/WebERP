@@ -11,9 +11,6 @@ import businesstype.BusinessTypeDAO;
 import businesstype.BusinessTypeDTO;
 import user.UserDAO;
 
-/**
- * Servlet implementation class FindCompanyToCompanyCodeServlet
- */
 @WebServlet("/FindCompanyToCompanyCodeServlet")
 public class FindCompanyToCompanyCodeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

@@ -38,7 +38,7 @@
 			<div class="col-md-4 col-md-offset-4">
 				<div class="login-panel panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">Please Sign In</h3>
+						<h3 class="panel-title">로그인</h3>
 					</div>
 					<div class="panel-body">
 						<form role="form" method="post" action="./userLogin">
@@ -53,10 +53,9 @@
 								</div>
 								<div class="checkbox">
 									<label> <input name="remember" type="checkbox"
-										value="Remember Me">Remember Me
+										value="Remember Me">아이디 기억하기
 									</label>
 								</div>
-								<!-- Change this to a button or input when using this as a form -->
 								<button type="submit" class="btn btn-lg btn-success btn-block">로그인</button>
 								<button type="button" class="btn btn-lg btn-info btn-block" onclick="location.href = 'join.jsp';">회원가입</button>
 								<button type="button" class="btn btn-lg btn-outline btn-primary btn-block" onclick="location.href = 'developer.jsp';">개발자 페이지</button>

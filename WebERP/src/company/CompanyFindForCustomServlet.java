@@ -54,7 +54,7 @@ public class CompanyFindForCustomServlet extends HttpServlet {
 		}
 	}
 	
-	/* ±¸ºĞÀÌ È¸»ç¸íÀÏ °æ¿ì */
+	/* êµ¬ë¶„ì´ íšŒì‚¬ëª…ì¼ ê²½ìš° */
 	public String getCompanyToCompanyName(String input) {
 		StringBuffer result = new StringBuffer("");
 		result.append("{\"result\":[");
@@ -78,7 +78,7 @@ public class CompanyFindForCustomServlet extends HttpServlet {
 		return result.toString();
 	}
 	
-	/* ±¸ºĞÀÌ È¸»çÄÚµåÀÏ °æ¿ì */
+	/* êµ¬ë¶„ì´ íšŒì‚¬ì½”ë“œì¼ ê²½ìš° */
 	public String getCompanyToCompanyCode(String input) {
 		StringBuffer result = new StringBuffer("");
 		result.append("{\"result\":[");
@@ -99,7 +99,7 @@ public class CompanyFindForCustomServlet extends HttpServlet {
 		return result.toString();
 	}
 	
-	/* ±¸ºĞÀÌ »ç¾÷ÀÚµî·Ï¹øÈ£ÀÏ °æ¿ì */
+	/* êµ¬ë¶„ì´ ì‚¬ì—…ìë“±ë¡ë²ˆí˜¸ì¼ ê²½ìš° */
 	public String getCompanyToBusinessLicenseNum(String input) {
 		StringBuffer result = new StringBuffer("");
 		result.append("{\"result\":[");

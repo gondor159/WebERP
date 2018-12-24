@@ -10,7 +10,6 @@
 	if (session.getAttribute("userID") != null) {
 		userID = (String) session.getAttribute("userID");
 	}
-	/*
 	if (userID == null) {
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
@@ -19,7 +18,6 @@
 		script.println("</script>");
 		return;
 	}
-	*/
 	
 	CompanyDTO companyCont = new CompanyDAO().getCompanyToID(userID);
 	ArrayList<CustomerDTO> customerList = new CustomerDAO().getCustomerListToCompanyCode(companyCont.getCompanyCode());
@@ -35,39 +33,32 @@
 
 <title>기초정보관리 - 일반거래처등록</title>
 
-<!-- Modal table CSS -->
-<link href="../css/table.css" rel="stylesheet">
-
-<!-- Bootstrap Core CSS -->
-<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- MetisMenu CSS -->
-<link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-<!-- DataTables CSS -->
-<link href="../vendor/datatables-plugins/dataTables.bootstrap.css"
-	rel="stylesheet">
-
-<!-- DataTables Responsive CSS -->
-<link href="../vendor/datatables-responsive/dataTables.responsive.css"
-	rel="stylesheet">
-
-<!-- Custom CSS -->
-<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-<!-- Custom Fonts -->
-<link href="../vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
+<!-- CSS -->
+	<!-- Modal table CSS -->
+	<link href="../css/table.css" rel="stylesheet">
+	<!-- Bootstrap Core CSS -->
+	<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- MetisMenu CSS -->
+	<link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+	<!-- DataTables CSS -->
+	<link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+	<!-- DataTables Responsive CSS -->
+	<link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+	<!-- Custom Fonts -->
+	<link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+	<![endif]-->
+<!-- /CSS -->
 
 <!-- jQuery -->
-<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.js" charset="UTF-8"></script>
+<!-- /jQuery -->
 
 <!-- function -->
 <script>
@@ -75,7 +66,7 @@
 function editCustom() {
 	var companyCode  = encodeURIComponent('<%=companyCont.getCompanyCode()%>');
 	var checked = $('input[name="selectCustom"]:checked').val();
-	location.href = "generalCustomerEdit.jsp?companyCode=" + compnayCode + "&customcode=" + checked;
+	location.href = "generalCustomerEdit.jsp?companyCode=" + companyCode + "&customcode=" + checked;
 }
 /* 회사 복사 */
 function selectCompanyToCustom() {
@@ -288,25 +279,19 @@ $(function(){
 	})
 });
 </script>
-<!-- jQuery -->
-<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.js" charset="UTF-8"></script>
 </head>
 <body>
 	<!-- Navigation -->
 	<nav class="navbar navbar-default navbar-static-top" role="navigation"
 		style="margin-bottom: 0">
 		<%@include file="../main/headNav.jsp"%>
-		<!-- /.navbar-top-links -->
-
 		<%@include file="../main/sideNav.jsp" %>
-		<!-- /.navbar-static-side -->
 	</nav>
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">일반거래처등록</h1>
 			</div>
-			<!-- /.col-lg-12 -->
 		</div>
 		<div class="row">
 			<div class="col-lg-5">
@@ -379,11 +364,11 @@ $(function(){
                             	<br>
                             	<table class="table table-striped">
                             		<tr>
-                            			<td style="text-align: right;">*거래처 코드</td>
-                            			<td><input type="text" name="customCode"></td>
-                            			<td style="text-align: right;">*구분</td>
+                            			<td style="text-align: right;"><h5>* 거래처 코드</h5></td>
+                            			<td><input class="form-control" type="text" name="customCode"></td>
+                            			<td style="text-align: right;"><h5>* 구분</h5></td>
                             			<td>
-                            				<select style="width: 70%; height: 25px;" name="division">
+                            				<select class="form-control" name="division">
                                             	<option value="nomal">일반</option>
                                             	<option value="trade">무역</option>
                                             	<option value="regident">주민</option>
@@ -392,54 +377,59 @@ $(function(){
                                         </td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">*거래처 이름</td>
-                            			<td colspan="3"><input id="customerName" type="text" name="customerName"></td>
+                            			<td style="text-align: right;"><h5>* 거래처 이름</h5></td>
+                            			<td colspan="3"><input class="form-control" id="customerName" type="text" name="customerName"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">*사업자 등록번호</td>
-                            			<td colspan="3"><input id="businessLicenseNum" type="text" name="businessLicenseNum"></td>
+                            			<td style="text-align: right;"><h5>* 사업자 등록번호</h5></td>
+                            			<td><input class="form-control" id="businessLicenseNum" type="text" name="businessLicenseNum"></td>
+                            			<td colspan="2"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">대표자 이름</td>
-                            			<td colspan="3"><input id="chiefName" type="text" name="chiefName"></td>
+                            			<td style="text-align: right;"><h5>대표자 이름</h5></td>
+                            			<td><input class="form-control" id="chiefName" type="text" name="chiefName"></td>
+                            			<td colspan="2">
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">우편번호</td>
-                            			<td><input type="text" maxlength="5" name="postNum" id="postNum"></td>
-                            			<td colspan="2"><button class="btn btn-default" id="searchAddressBtn" type="button"><i class="fa fa-search-plus"></i></button></td>
+                            			<td style="text-align: right;"><h5>우편번호</h5></td>
+                            			<td><input class="form-control" type="text" maxlength="5" name="postNum" id="postNum"></td>
+                            			<td><button class="btn btn-default" id="searchAddressBtn" type="button"><i class="fa fa-search-plus"></i></button></td>
+                            			<td></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">주소</td>
-                            			<td colspan="3"><input type="text" style="width: 85%" name="address" id="address"></td>
+                            			<td style="text-align: right;"><h5>주소</h5></td>
+                            			<td colspan="3"><input class="form-control" type="text" name="address" id="address"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">전화번호</td>
-                            			<td colspan="3"><input id="tel" type="text" name="tel"></td>
+                            			<td style="text-align: right;"><h5>전화번호</h5></td>
+                            			<td><input class="form-control" id="tel" type="text" name="tel"></td>
+                            			<td colspan="2"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">팩스번호</td>
-                            			<td colspan="3"><input id="fax" type="text" name="fax"></td>
+                            			<td style="text-align: right;"><h5>팩스번호</h5></td>
+                            			<td><input class="form-control" type="text" name="fax"></td>
+                            			<td colspan="2"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">업태</td>
-                            			<td><input id="businessCondition" type="text" name="businessCondition" readonly></td>
+                            			<td style="text-align: right;"><h5>업태</h5></td>
+                            			<td><input class="form-control" id="businessCondition" type="text" name="businessCondition" readonly></td>
                             			<td style="text-align: left;"><button class="btn btn-default" id="searchTypeBtn" type="button"><i class="fa fa-search-plus "></i></button></td>
-                            			<td><input id="businessConditionName" type="text" readonly></td>
+                            			<td><input class="form-control" id="businessConditionName" type="text" readonly></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">종목</td>
-                            			<td><input id="businessType" type="text" name="businessType" readonly></td>
-                            			<td style="text-align: left;"></td>
-                            			<td><input id="businessTypeName" type="text" readonly></td>
+                            			<td style="text-align: right;"><h5>종목</h5></td>
+                            			<td><input class="form-control" id="businessType" type="text" name="businessType" readonly></td>
+                            			<td></td>
+                            			<td><input class="form-control" id="businessTypeName" type="text" readonly></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">홈페이지</td>
-                            			<td colspan="3"><input id="homepage" type="url" style="width: 85%;" name="homepage" placeholder="https://~ or http://~"></td>
+                            			<td style="text-align: right;"><h5>홈페이지</h5></td>
+                            			<td colspan="3"><input class="form-control" id="homepage" type="url" name="homepage" placeholder="https://~ or http://~"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">환종</td>
-                            			<td colspan="3">
-                            				<select style="width: 30%; height: 25px;" name="monetaryUnit">
+                            			<td style="text-align: right;"><h5>환종</h5></td>
+                            			<td>
+                            				<select class="form-control" name="monetaryUnit">
 												<option value="KRW">￦ KRW</option>
 												<option value="USD">$ USD</option>
 												<option value="JPY">￥ JPY</option>
@@ -447,52 +437,53 @@ $(function(){
 												<option value="EUR">€ EUR</option>
 											</select>
                             			</td>
+                            			<td colspan="2"></td>
                             		</tr>
                             	</table>
                             	<hr>
                             	<table class="table table-striped">
                             		 <tr>
-                            			<td style="text-align: right;">프로젝트</td>
-                            			<td><input id="project" type="text" name="project"></td>
+                            			<td style="text-align: right;"><h5>프로젝트</h5></td>
+                            			<td><input class="form-control" id="project" type="text" name="project" readonly></td>
                             			<td style="text-align: left;"><button class="btn btn-default" id="searchProjectBtn" type="button"><i class="fa fa-search-plus "></i></button></td>
-                            			<td><input id="projectName" type="text" readonly></td>
+                            			<td><input class="form-control" id="projectName" type="text" readonly></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">거래처분류</td>
-                            			<td><input id="customGroup" type="text" name="customGroup"></td>
+                            			<td style="text-align: right;"><h5>거래처분류</h5></td>
+                            			<td><input class="form-control" id="customGroup" type="text" name="customGroup" readonly></td>
                             			<td style="text-align: left;"><button class="btn btn-default" id="searchCustomGroupBtn" type="button"><i class="fa fa-search-plus "></i></button></td>
-                            			<td><input id="customGroupName" type="text" readonly></td>
+                            			<td><input class="form-control" id="customGroupName" type="text" readonly></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">거래처등급</td>
-                            			<td><input id="customGrade" type="text" name="customGrade"></td>
+                            			<td style="text-align: right;"><h5>거래처등급</h5></td>
+                            			<td><input class="form-control" id="customGrade" type="text" name="customGrade" readonly></td>
                             			<td style="text-align: left;"><button class="btn btn-default" id="searchCustomGradeBtn" type="button"><i class="fa fa-search-plus "></i></button></td>
-                            			<td><input id="customGradeName" type="text" readonly></td>
+                            			<td><input class="form-control" id="customGradeName" type="text" readonly></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">수금거래처</td>
-                            			<td><input id="collectCompany" type="text" name="collectCompany"></td>
+                            			<td style="text-align: right;"><h5>수금거래처</h5></td>
+                            			<td><input class="form-control" id="collectCompany" type="text" name="collectCompany"></td>
                             			<td style="text-align: left;"><button class="btn btn-default" id="searchCollectCompanyBtn" type="button"><i class="fa fa-search-plus "></i></button></td>
-                            			<td><input id="collectCompanyName" type="text" readonly></td>
+                            			<td><input class="form-control" id="collectCompanyName" type="text" readonly></td>
                             		</tr>
                             	</table>
                             	<hr>
                             	<table class="table table-striped">
                             		<tr>
-                            			<td style="text-align: right;">거래시작일</td>
-                            			<td><input type="date" placeholder="YYYY-MM-DD" name="tradeStartDate"></td>
-                            			<td style="text-align: right;">거래종료일</td>
-                            			<td><input type="date" placeholder="YYYY-MM-DD" name="tradeEndDate"></td>
+                            			<td style="text-align: right;"><h5>거래시작일</h5></td>
+                            			<td><input class="form-control" type="date" placeholder="YYYY-MM-DD" name="tradeStartDate"></td>
+                            			<td style="text-align: right;"><h5>거래종료일</h5></td>
+                            			<td><input class="form-control" type="date" placeholder="YYYY-MM-DD" name="tradeEndDate"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">사용여부</td>
-                            			<td colspan="3">
-                            				<select style="height: 25px;" name="useBoolean">
+                            			<td style="text-align: right;"><h5>사용여부</h5></td>
+                            			<td>
+                            				<select class="form-control" name="useBoolean">
                                             	<option value="true">여</option>
                                             	<option value="false">부</option>
                                         	</select>
                                         </td>
-                                        
+                                        <td colspan="2"></td>
                             		</tr>
                             	</table>
                             </div>
@@ -500,9 +491,9 @@ $(function(){
                             	<h5><i class="fa fa-tag"></i>&nbsp;계약정보</h5>
                                 <table class="table table-striped">
                                 	<tr>
-                            			<td style="text-align: right;">거래형태</td>
+                            			<td style="text-align: right;"><h5>거래형태</h5></td>
                             			<td>
-                            				<select style="width: 85%; height: 25px;" name="tradeForm">
+                            				<select class="form-control" name="tradeForm">
                             					<option value="null">  </option>
                                             	<option value="sales">매출</option>
                                             	<option value="purchase">매입</option>
@@ -513,70 +504,99 @@ $(function(){
                                             	<option value="etc">기타</option>
                                         	</select>
                                         </td>
-                            			<td style="text-align: right;">할인율</td>
-                            			<td><input type="text" name="discountRate">%</td>
+                            			<td style="text-align: right;"><h5>할인율</h5></td>
+                            			<td>
+                            				<div class="form-group input-group">
+                                            	<input type="text" class="form-control" style = "text-align:right;" name="discountRate">
+                                            	<span class="input-group-addon">%</span>
+                                        	</div>
+                            			</td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">계약금액</td>
-                            			<td colspan="3"><input type="text" name="contractSum"></td>
+                            			<td style="text-align: right;"><h5>계약금액</h5></td>
+                            			<td><input class="form-control" type="text" name="contractSum"></td>
+                            			<td colspan="2"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">결제조건</td>
-                            			<td colspan="3"><input type="text" name="paymentCondition"></td>
+                            			<td style="text-align: right;"><h5>결제조건</h5></td>
+                            			<td colspan="3"><input class="form-control" type="text" name="paymentCondition"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">여신한도액</td>
-                            			<td colspan="3"><input type="text" name="loanLimit"></td>
+                            			<td style="text-align: right;"><h5>여신한도액</h5></td>
+                            			<td><input class="form-control" type="text" name="loanLimit"></td>
+                            			<td colspan="2"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">한도회귀일</td>
-                            			<td colspan="3"><input type="text" name="limitReturnDate">일</td>
+                            			<td style="text-align: right;"><h5>한도회귀일</h5></td>
+                            			<td>
+                            				<div class="form-group input-group">
+                                            	<input type="text" class="form-control" style = "text-align:right;" name="limitReturnDate">
+                                            	<span class="input-group-addon">日</span>
+                                        	</div>
+                            			</td>
+                            			<td colspan="2"></td>
                             		</tr>
                                 </table>
                                 <h5><i class="fa fa-tag"></i>&nbsp;거래처 계좌관리</h5>
                                 <table class="table table-striped">
                                 	<tr>
-                            			<td style="text-align: right;">금융기관</td>
-                            			<td><input id="financialInstitutionCode" type="text" name="financialInstitutionCode" readonly></td>
+                            			<td style="text-align: right;"><h5>금융기관</h5></td>
+                            			<td><input class="form-control" id="financialInstitutionCode" type="text" name="financialInstitutionCode" readonly></td>
                             			<td style="text-align: left;"><button id="searchFinancialInstitutionBtn" class="btn btn-default" type="button"><i class="fa fa-search-plus "></i></button></td>
-                            			<td><input id="financialInstitutionName" type="text" readonly></td>
+                            			<td><input class="form-control" id="financialInstitutionName" type="text" readonly></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">지점명</td>
-                            			<td colspan="3"><input type="text" name="branchName"></td>
+                            			<td style="text-align: right;"><h5>지점명</h5></td>
+                            			<td><input class="form-control" type="text" name="branchName"></td>
+                            			<td colspan="2"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">계좌번호</td>
-                            			<td colspan="3"><input type="text" name="accountNum"></td>
+                            			<td style="text-align: right;"><h5>계좌번호</h5></td>
+                            			<td><input class="form-control" type="text" name="accountNum"></td>
+                            			<td colspan="2"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">예금주</td>
-                            			<td colspan="3"><input type="text" name="accountHolder"></td>
+                            			<td style="text-align: right;"><h5>예금주</h5></td>
+                            			<td><input class="form-control" type="text" name="accountHolder"></td>
+                            			<td colspan="2"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">지금예정일(매월)</td>
-                            			<td colspan="3"><input type="text" maxlength="2" name="payDueDate">일</td>
+                            			<td style="text-align: right;"><h5>지금예정일(매월)</h5></td>
+                            			<td>
+                            				<div class="form-group input-group">
+                                            	<input type="text" class="form-control" style = "text-align:right;" maxlength="2" name="payDueDate">
+                                            	<span class="input-group-addon">日</span>
+                                        	</div>
+                            			</td>
+                            			<td colspan="2"></td>
                             		</tr>
                                 </table>
                                 <h5><i class="fa fa-tag"></i>&nbsp;수금 계좌관리</h5>
                                 <table class="table table-striped">
                                 	<tr>
-                            			<td style="text-align: right;">은행코드</td>
-                            			<td><input id="accountCode" type="text" name="accountCode" readonly></td>
+                            			<td style="text-align: right;"><h5>은행코드</h5></td>
+                            			<td><input class="form-control" id="accountCode" type="text" name="accountCode" readonly></td>
                             			<td style="text-align: left;"><button class="btn btn-default" id="searchAccountCodeBtn" type="button"><i class="fa fa-search-plus "></i></button></td>
-                            			<td><input id="accountCodeName" type="text" readonly></td>
+                            			<td><input class="form-control" id="accountCodeName" type="text" readonly></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">지점명</td>
-                            			<td colspan="3"><input id="codeBranchName" type="text" readonly></td>
+                            			<td style="text-align: right;"><h5>지점명</h5></td>
+                            			<td colspan="3"><input class="form-control" id="codeBranchName" type="text" readonly></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">계좌번호</td>
-                            			<td colspan="3"><input id="codeAccountNum" type="text" readonly></td>
+                            			<td style="text-align: right;"><h5>계좌번호</h5></td>
+                            			<td><input class="form-control" id="codeAccountNum" type="text" readonly></td>
+                            			<td colspan="2"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">수금예정일(매월)</td>
-                            			<td colspan="3"><input type="text" maxlength="2" name="collectionDueDate">일</td>
+                            			<td style="text-align: right;"><h5>수금예정일(매월)</h5></td>
+                            			<td>
+                            				<div class="form-group input-group">
+                                            	<input type="text" class="form-control" style = "text-align:right;" maxlength="2" name="collectionDueDate">
+                                            	<span class="input-group-addon">日</span>
+                                        	</div>
+                            			</td>
+                            			<td colspan="2"></td>
                             		</tr>
                                 </table>
                             </div>
@@ -584,56 +604,58 @@ $(function(){
                                 <h5><i class="fa fa-tag"></i>&nbsp;관리 담당자</h5>
                                 <table class="table table-striped">
                                 	<tr>
-                            			<td style="text-align: right;">담당 부서코드</td>
-                            			<td><input type="text" id="chargeDeptCode" name="chargeDeptCode" readonly></td>
+                            			<td style="text-align: right;"><h5>담당 부서코드</h5></td>
+                            			<td><input class="form-control" type="text" id="chargeDeptCode" name="chargeDeptCode" readonly></td>
                             			<td style="text-align: left;"><button class="btn btn-default" id="searchChargeDeptCodeBtn" type="button"><i class="fa fa-search-plus "></i></button></td>
-                            			<td><input type="text" id="chargeDeptName" readonly></td>
+                            			<td><input class="form-control" type="text" id="chargeDeptName" readonly></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">직급 코드</td>
-                            			<td><input type="text" name="positionCode" readonly></td>
+                            			<td style="text-align: right;"><h5>직급 코드</h5></td>
+                            			<td><input class="form-control" type="text" name="positionCode" readonly></td>
                             			<td style="text-align: left;"><button class="btn btn-default" id="searchPositionCodeBtn" type="button"><i class="fa fa-search-plus "></i></button></td>
-                            			<td><input id="positionName" type="text" readonly></td>
+                            			<td><input class="form-control" id="positionName" type="text" readonly></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">담당업무</td>
-                            			<td colspan="3"><input type="text" style="width: 81%;" name="chargeTask"></td>
+                            			<td style="text-align: right;"><h5>담당업무</h5></td>
+                            			<td colspan="3"><input class="form-control" type="text" name="chargeTask"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">담당사원번호</td>
-                            			<td><input id="chargeEmployeeCode" type="text" name="chargeEmployeeCode" readonly></td>
+                            			<td style="text-align: right;"><h5>담당사원번호</h5></td>
+                            			<td><input class="form-control" id="chargeEmployeeCode" type="text" name="chargeEmployeeCode" readonly></td>
                             			<td style="text-align: left;"><button class="btn btn-default" id="searchChargeEmployeeCodeBtn" type="button"><i class="fa fa-search-plus "></i></button></td>
-                            			<td><input id="chargeEmployeeName" type="text" readonly></td>
+                            			<td><input class="form-control" id="chargeEmployeeName" type="text" readonly></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">전화번호</td>
-                            			<td><input id="employeeTel" type="text" name="employeeTel" readonly></td>
-                            			<td style="text-align: right;">내선</td>
-                            			<td><input type="text" name="employeeExtension"></td>
+                            			<td style="text-align: right;"><h5>전화번호</h5></td>
+                            			<td><input class="form-control" id="employeeTel" type="text" name="employeeTel" readonly></td>
+                            			<td style="text-align: right;"><h5>내선</h5></td>
+                            			<td><input class="form-control" type="text" name="employeeExtension"></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">비고</td>
-                            			<td colspan="3"><textarea style="width: 81%;" rows="3" name="chargeNote"></textarea></td>
+                            			<td style="text-align: right;"><h5>비고</h5></td>
+                            			<td colspan="3"><textarea class="form-control" rows="3" name="chargeNote"></textarea></td>
                             		</tr>
                                 </table>
                                 <h5><i class="fa fa-tag"></i>&nbsp;수신처 관리</h5>
                                 <table class="table table-striped">
                                 	<tr>
-                            			<td style="text-align: right;">우편번호</td>
-                            			<td><input type="text" maxlength="5" id="receivePostNum" name="receivePostNum" readonly></td>
+                            			<td style="text-align: right;"><h5>우편번호</h5></td>
+                            			<td><input class="form-control" type="text" style="width: 30%;" maxlength="5" id="receivePostNum" name="receivePostNum" readonly></td>
                             			<td><button class="btn btn-default" type="button" id="serchReceiveAddressBtn"><i class="fa fa-search-plus "></i></button></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">수신처주소</td>
-                            			<td colspan="2"><input type="text" style="width: 85%" id="receiveAddress" name="receiveAddress" readonly></td>
+                            			<td style="text-align: right;"><h5>수신처주소</h5></td>
+                            			<td colspan="2"><input class="form-control" type="text" id="receiveAddress" name="receiveAddress" readonly></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">전화번호</td>
-                            			<td colspan="2"><input type="text" name="receiveTel"></td>
+                            			<td style="text-align: right;"><h5>전화번호</h5></td>
+                            			<td><input class="form-control" type="text" style="width: 45%;" name="receiveTel"></td>
+                            			<td></td>
                             		</tr>
                             		<tr>
-                            			<td style="text-align: right;">팩스번호</td>
-                            			<td colspan="2"><input type="text" name="receiveFax"></td>
+                            			<td style="text-align: right;"><h5>팩스번호</h5></td>
+                            			<td><input class="form-control" type="text" style="width: 45%;" name="receiveFax"></td>
+                            			<td></td>
                             		</tr>
                                 </table>
                             </div>
@@ -642,13 +664,9 @@ $(function(){
                         <input type="hidden" name="lastSetting" value="<%= userID %>">
                         <button class="btn btn-outline btn-primary btn-lg btn-block" type="submit">등록</button>
 					</form>
-					<!-- /.panel-body -->
 				</div>
-				<!-- /.panel -->
 			</div>
-			<!-- /.col-lg-6 -->
 		</div>
-		<!-- /.row -->
 	</div>
 	<!-- Modal -->
 	<!-- 회사 검색 -->
@@ -657,9 +675,7 @@ $(function(){
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 주소 검색 -->
 	<div class="modal fade" id="searchAddress" tabindex="-1" role="dialog"
@@ -667,9 +683,7 @@ $(function(){
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 업태업종 검색 -->
 	<div class="modal fade" id="searchType" tabindex="-1" role="dialog"
@@ -677,9 +691,7 @@ $(function(){
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 프로젝트 검색 -->
 	<div class="modal fade" id="searchProject" tabindex="-1" role="dialog"
@@ -687,9 +699,7 @@ $(function(){
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 거래처분류 검색 -->
 	<div class="modal fade" id="searchCustomGroup" tabindex="-1" role="dialog"
@@ -697,9 +707,7 @@ $(function(){
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 거래처등급 검색 -->
 	<div class="modal fade" id="searchCustomGrade" tabindex="-1" role="dialog"
@@ -707,9 +715,7 @@ $(function(){
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 수금거래처 검색 -->
 	<div class="modal fade" id="searchCollectCompany" tabindex="-1" role="dialog"
@@ -717,9 +723,7 @@ $(function(){
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 금융기관 검색 -->
 	<div class="modal fade" id="searchFinancialInstitution" tabindex="-1" role="dialog"
@@ -727,9 +731,7 @@ $(function(){
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 은행코드 검색 -->
 	<div class="modal fade" id="searchAccountCode" tabindex="-1" role="dialog"
@@ -737,9 +739,7 @@ $(function(){
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 부서 검색 -->
 	<div class="modal fade" id="searchChargeDeptCode" tabindex="-1" role="dialog"
@@ -747,9 +747,7 @@ $(function(){
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 직금 검색 -->
 	<div class="modal fade" id="searchPositionCode" tabindex="-1" role="dialog"
@@ -757,9 +755,7 @@ $(function(){
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 사원 검색 -->
 	<div class="modal fade" id="searchChargeEmployeeCode" tabindex="-1" role="dialog"
@@ -767,9 +763,7 @@ $(function(){
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 수신처주소 검색 -->
 	<div class="modal fade" id="searchReceiveAddress" tabindex="-1" role="dialog"
@@ -777,27 +771,22 @@ $(function(){
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
+	
+<!-- Java Script -->
 	<!-- jQuery -->
 	<script src="../vendor/jquery/jquery.min.js"></script>
-
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-
 	<!-- Metis Menu Plugin JavaScript -->
 	<script src="../vendor/metisMenu/metisMenu.min.js"></script>
-
 	<!-- DataTables JavaScript -->
 	<script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
 	<script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
 	<script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
-
 	<!-- Custom Theme JavaScript -->
 	<script src="../dist/js/sb-admin-2.js"></script>
-
 	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
 	<script>
 		$(document).ready(function() {
@@ -816,6 +805,6 @@ $(function(){
 		// popover demo
 		$("[data-toggle=popover]").popover()
 	</script>
+<!-- /Java Script -->
 </body>
-
 </html>

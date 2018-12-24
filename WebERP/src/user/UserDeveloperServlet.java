@@ -20,7 +20,7 @@ public class UserDeveloperServlet extends HttpServlet {
 		if(developerPass == null || developerPass.equals("")) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('ÀÎÁõ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.')");
+			script.println("alert('ì¸ì¦ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.')");
 			script.println("history.back();");
 			script.println("</script>");
 			script.close();
@@ -37,7 +37,7 @@ public class UserDeveloperServlet extends HttpServlet {
 		} else {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('ÀÎÁõ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.')");
+			script.println("alert('ì¸ì¦ë²ˆí˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤.')");
 			script.println("history.back();");
 			script.println("</script>");
 			script.close();
