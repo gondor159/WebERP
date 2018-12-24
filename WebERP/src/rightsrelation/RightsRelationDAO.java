@@ -19,7 +19,7 @@ public class RightsRelationDAO {
 			e.printStackTrace();
 		}
 	}
-	
+	/* 권한 관계 등록 */
 	int registRight(String userID, String companyCode, String rightsCode) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;

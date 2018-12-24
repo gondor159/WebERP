@@ -21,7 +21,7 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 	}
-	/* ·Î±×ÀÎ */
+	/* ë¡œê·¸ì¸ */
 	public int login(String userID, String userPassword) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -53,7 +53,7 @@ public class UserDAO {
 		}
 		return -1;
 	}
-	/* È¸¿ø°¡ÀÔ */
+	/* íšŒì›ê°€ì… */
 	public int join(String userID, String userPassword, String userProfile, String userName, String userEngName, String userHanName, String identityNum, String postNum, String address, String homeTel, String phoneNum, String email) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -86,7 +86,7 @@ public class UserDAO {
 		}
 		return -1;
 	}
-	/* ¾ÆÀÌµğ Áßº¹Ã¼Å© */
+	/* ì•„ì´ë”” ì¤‘ë³µì²´í¬ */
 	public int checkId(String userID) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -115,7 +115,7 @@ public class UserDAO {
 		}
 		return -1;
 	}
-	/* ´ÜÀÏ À¯ÀúÀÌ¸§ °Ë»ö  (¾ÆÀÌµğ)*/
+	/* ë‹¨ì¼ ìœ ì €ì´ë¦„ ê²€ìƒ‰  (ì•„ì´ë””)*/
 	public String findUserName(String userID) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -142,7 +142,7 @@ public class UserDAO {
 		}
 		return "";
 	}
-	/* ¸®½ºÆ® À¯ÀúID °Ë»ö (À¯ÀúÀÌ¸§) */
+	/* ë¦¬ìŠ¤íŠ¸ ìœ ì €ID ê²€ìƒ‰ (ìœ ì €ì´ë¦„) */
 	public ArrayList<String> findUserID(String userName) {
 		ArrayList<String> userIDs = null;
 		Connection conn = null;
@@ -172,7 +172,7 @@ public class UserDAO {
 		}
 		return userIDs;
 	}
-	/* ´ÜÀÏ À¯Àú °Ë»ö (À¯ÀúID) */
+	/* ë‹¨ì¼ ìœ ì € ê²€ìƒ‰ (ìœ ì €ID) */
 	public UserDTO getUser(String userID) {
 		UserDTO user = new UserDTO();
 		Connection conn = null;
@@ -211,7 +211,7 @@ public class UserDAO {
 		}
 		return user;
 	}
-	/* ¸®½ºÆ® À¯Àú °Ë»ö (ÀÌ¸§) */
+	/* ë¦¬ìŠ¤íŠ¸ ìœ ì € ê²€ìƒ‰ (ì´ë¦„) */
 	public ArrayList<UserDTO> getUserToName(String userName) {
 		ArrayList<UserDTO> userList = null;
 		Connection conn = null;

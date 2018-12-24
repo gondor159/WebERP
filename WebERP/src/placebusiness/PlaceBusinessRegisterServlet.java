@@ -46,7 +46,7 @@ public class PlaceBusinessRegisterServlet extends HttpServlet {
 				|| headBooleanSt == null || headBooleanSt.equals("")) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('ÇÊ¼ö ¿ä¼Ò Áß ÀÔ·Â µÇÁö ¾ÊÀº ¿ä¼Ò°¡ ÀÖ½À´Ï´Ù.')");
+			script.println("alert('í•„ìˆ˜ ìš”ì†Œ ì¤‘ ì…ë ¥ ë˜ì§€ ì•Šì€ ìš”ì†Œê°€ ìˆìŠµë‹ˆë‹¤.')");
 			script.println("location.href = 'placeRegist.jsp'");
 			script.println("</script>");
 			script.close();
@@ -59,7 +59,7 @@ public class PlaceBusinessRegisterServlet extends HttpServlet {
 		if(result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('µî·ÏµÇ¾ú½À´Ï´Ù.')");
+			script.println("alert('ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤.')");
 			script.println("location.href = 'placeRegist.jsp'");
 			script.println("</script>");
 			script.close();
@@ -67,7 +67,7 @@ public class PlaceBusinessRegisterServlet extends HttpServlet {
 		} else {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('ÁË¼ÛÇÕ´Ï´Ù. ¿À·ù°¡ ¹ß»ıÇß½À´Ï´Ù.')");
+			script.println("alert('ë°ì´í„°ë² ì´ìŠ¤ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.')");
 			script.println("location.href = 'placeRegist.jsp'");
 			script.println("</script>");
 			script.close();

@@ -30,7 +30,7 @@ public class EmployeeRegistServlet extends HttpServlet {
 				|| departmentCode == null || departmentCode.equals("") || joinDate == null || joinDate.equals("")) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('¸ğµç ³»¿ëÀ» ÀÔ·ÂÇÏ¼¼¿ä.')");
+			script.println("alert('ëª¨ë“  ë‚´ìš©ì„ ì…ë ¥í•˜ì„¸ìš”.')");
 			script.println("location.href = 'employeeRegist.jsp'");
 			script.println("</script>");
 			script.close();
@@ -40,7 +40,7 @@ public class EmployeeRegistServlet extends HttpServlet {
 		if (result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('»ç¿ø¹øÈ£ : " + employeeNum + "¸¦ µî·ÏÇß½À´Ï´Ù.')");
+			script.println("alert('ì‚¬ì›ë²ˆí˜¸ : " + employeeNum + "ë¥¼ ë“±ë¡í–ˆìŠµë‹ˆë‹¤.')");
 			script.println("location.href = 'employeeRegist.jsp'");
 			script.println("</script>");
 			script.close();
@@ -48,7 +48,7 @@ public class EmployeeRegistServlet extends HttpServlet {
 		} else {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('ÁË¼ÛÇÕ´Ï´Ù. ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.')");
+			script.println("alert('ë°ì´í„°ë² ì´ìŠ¤ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.')");
 			script.println("location.href = 'employeeRegist.jsp'");
 			script.println("</script>");
 			script.close();

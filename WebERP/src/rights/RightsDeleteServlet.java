@@ -24,7 +24,7 @@ public class RightsDeleteServlet extends HttpServlet {
 		if (rightsCode == null || rightsCode.equals("")) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('¸ğµç°ªÀ» ÀÔ·ÂÇÏ¼¼¿ä.')");
+			script.println("alert('ëª¨ë“ ê°’ì„ ì…ë ¥í•˜ì„¸ìš”.')");
 			script.println("history.back();");
 			script.println("</script>");
 			script.close();
@@ -36,7 +36,7 @@ public class RightsDeleteServlet extends HttpServlet {
 		if (Result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('»èÁ¦ ¼º°ø.')");
+			script.println("alert('ì‚­ì œ ì„±ê³µ.')");
 			script.println("location.href='dbRights.jsp'");
 			script.println("</script>");
 			script.close();
@@ -45,7 +45,7 @@ public class RightsDeleteServlet extends HttpServlet {
 		} else {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('»èÁ¦ ½ÇÆĞ.')");
+			script.println("alert('ì‚­ì œ ì‹¤íŒ¨.')");
 			script.println("history.back();");
 			script.println("</script>");
 			script.close();

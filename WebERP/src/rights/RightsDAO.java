@@ -24,7 +24,7 @@ public class RightsDAO {
 		}
 	}
 	
-	/* DB ÀÔ·Â */
+	/* DB INSERT */
 	public int insertrights(String rightsCode, String rightsName) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -48,7 +48,7 @@ public class RightsDAO {
 		return -1;
 	}
 	
-	/* DB ¼öÁ¤ */
+	/* DB UPDATE */
 	public int updaterights(String editRightsCode, String rightsCode, String rightsName) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -73,7 +73,7 @@ public class RightsDAO {
 		return -1;
 	}
 	
-	/* DB »èÁ¦ */
+	/* DB DELETE */
 	public int deleterights(String rightsCode) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -96,7 +96,7 @@ public class RightsDAO {
 		return -1;
 	}
 	
-	/* ¸®½ºÆ® ºÒ·¯¿À±â */
+	/* ë¦¬ìŠ¤íŠ¸ ë¶ˆëŸ¬ì˜¤ê¸° */
 	public ArrayList<RightsDTO> getRightsList() {
 		ArrayList<RightsDTO> rightList = null;
 		Connection conn = null;

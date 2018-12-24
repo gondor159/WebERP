@@ -27,7 +27,7 @@ public class BusinessTypeUpdateServlet extends HttpServlet {
 						businessConditionName == null || businessConditionName.equals("") || businessTypeName == null || businessTypeName.equals("")) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('¸ğµç °ªÀ» ÀÔ·ÂÇÏ¼¼¿ä.')");
+			script.println("alert('ëª¨ë“  ê°’ì„ ì…ë ¥í•˜ì„¸ìš”.')");
 			script.println("history.back();");
 			script.println("</script>");
 			script.close();
@@ -37,7 +37,7 @@ public class BusinessTypeUpdateServlet extends HttpServlet {
 		if(result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('¼öÁ¤µÇ¾ú½À´Ï´Ù.')");
+			script.println("alert('ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.')");
 			script.println("location.href = 'dbBusinessType.jsp';");
 			script.println("</script>");
 			script.close();
@@ -45,7 +45,7 @@ public class BusinessTypeUpdateServlet extends HttpServlet {
 		} else {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('¼öÁ¤¿¡ ½ÇÆĞ Çß½À´Ï´Ù.')");
+			script.println("alert('ìˆ˜ì •ì— ì‹¤íŒ¨ í–ˆìŠµë‹ˆë‹¤.')");
 			script.println("history.back();");
 			script.println("</script>");
 			script.close();

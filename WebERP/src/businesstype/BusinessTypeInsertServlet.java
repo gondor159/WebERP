@@ -23,7 +23,7 @@ public class BusinessTypeInsertServlet extends HttpServlet {
 		if(businessCondition == null || businessCondition.equals("") || businessType == null || businessType.equals("")) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('PK´Â nullÀÌ ¿Ã ¼ö ¾ø½À´Ï´Ù.')");
+			script.println("alert('PKëŠ” nullì´ ì˜¬ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.')");
 			script.println("history.back();");
 			script.println("</script>");
 			script.close();
@@ -33,7 +33,7 @@ public class BusinessTypeInsertServlet extends HttpServlet {
 		if(result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('ÀÔ·ÂµÇ¾ú½À´Ï´Ù.')");
+			script.println("alert('ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.')");
 			script.println("location.href = 'dbBusinessType.jsp';");
 			script.println("</script>");
 			script.close();
@@ -41,7 +41,7 @@ public class BusinessTypeInsertServlet extends HttpServlet {
 		} else {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('ÀÔ·Â¿¡ ½ÇÆĞ Çß½À´Ï´Ù.')");
+			script.println("alert('ì…ë ¥ì— ì‹¤íŒ¨ í–ˆìŠµë‹ˆë‹¤.')");
 			script.println("history.back();");
 			script.println("</script>");
 			script.close();

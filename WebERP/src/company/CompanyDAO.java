@@ -20,7 +20,7 @@ public class CompanyDAO {
 			e.printStackTrace();
 		}
 	}
-	/* È¸»çÄÚµå Ãß°¡ */
+	/* íšŒì‚¬ì½”ë“œ ì¶”ê°€  */
 	public int getNextCompanyCode(String businessCondition, String businessType) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -49,7 +49,7 @@ public class CompanyDAO {
 		}
 		return -1;
 	}
-	/* È¸»çµî·Ï */
+	/* íšŒì‚¬ë“±ë¡ */
 	public int registCompany(String businessLicenseNum, String corporateLicenseNum, String companyName,
 			String companyEngName, String chiefID, String postNum, String address, String addressEng, String tel,
 			String fax, String businessCondition, String businessType, String establishmentDate, String startDate,
@@ -91,7 +91,7 @@ public class CompanyDAO {
 		}
 		return -1;
 	}
-	/* ´ÜÀÏ È¸»ç °Ë»ö (È¸»çÄÚµå) */
+	/* ë‹¨ì¼ íšŒì‚¬ ê²€ìƒ‰ (íšŒì‚¬ì½”ë“œ) */
 	public CompanyDTO getCompany(String companyCode) {
 		CompanyDTO company = new CompanyDTO();
 		Connection conn = null;
@@ -135,7 +135,7 @@ public class CompanyDAO {
 		}
 		return company;
 	}
-	/* ´ÜÀÏ È¸»ç °Ë»ö (´ëÇ¥ID) */
+	/* ë‹¨ì¼ íšŒì‚¬ ê²€ìƒ‰ (ëŒ€í‘œID) */
 	public CompanyDTO getCompanyToID(String chiefID) {
 		CompanyDTO company = new CompanyDTO();
 		Connection conn = null;
@@ -179,7 +179,7 @@ public class CompanyDAO {
 		}
 		return company;
 	}
-	/* ´ÜÀÏ È¸»ç °Ë»ö (»ç¾÷ÀÚµî·Ï¹øÈ£) */
+	/* ë‹¨ì¼ íšŒì‚¬ ê²€ìƒ‰ (ì‚¬ì—…ìë“±ë¡ë²ˆí˜¸) */
 	public CompanyDTO getCompanyToLicense(String businessLicenseNum) {
 		CompanyDTO company = new CompanyDTO();
 		Connection conn = null;
@@ -223,7 +223,7 @@ public class CompanyDAO {
 		}
 		return company;
 	}
-	/* ¸®½ºÆ® È¸»ç°Ë»ö */
+	/* ë¦¬ìŠ¤íŠ¸ íšŒì‚¬ê²€ìƒ‰ */
 	public ArrayList<CompanyDTO> getCompanyList() {
 		ArrayList<CompanyDTO> companyList = null;
 		Connection conn = null;
@@ -269,7 +269,7 @@ public class CompanyDAO {
 		}
 		return companyList;
 	}
-	/* ¸®½ºÆ® È¸»ç°Ë»ö (»çÀå ¾ÆÀÌµğ) */
+	/* ë¦¬ìŠ¤íŠ¸ íšŒì‚¬ê²€ìƒ‰ (ëŒ€í‘œ ID) */
 	public ArrayList<CompanyDTO> getCompanyListToCheif(String chiefID) {
 		ArrayList<CompanyDTO> companyList = null;
 		Connection conn = null;
@@ -316,7 +316,7 @@ public class CompanyDAO {
 		}
 		return companyList;
 	}
-	/* ¸®½ºÆ® È¸»ç°Ë»ö (È¸»ç¸í) */
+	/* ë¦¬ìŠ¤íŠ¸ íšŒì‚¬ê²€ìƒ‰ (íšŒì‚¬ëª…) */
 	public ArrayList<CompanyDTO> getCompanyListToCompanyName(String companyName) {
 		ArrayList<CompanyDTO> companyList = null;
 		Connection conn = null;

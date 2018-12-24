@@ -20,7 +20,7 @@ public class FieldDAO {
 			e.printStackTrace();
 		}
 	}
-	/* ºÎ¹® µî·Ï */
+	/* ë¶€ë¬¸ ë“±ë¡ */
 	public int registField(String companyCode, String fieldCode, String fieldName) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -44,7 +44,7 @@ public class FieldDAO {
 		}
 		return -1;
 	}
-	/* ºÎ¹® ÀÌ¸§ °Ë»ö */
+	/* ë¶€ë¬¸ ì´ë¦„ ê²€ìƒ‰ */
 	public String getFieldName(String companyCode, String fieldCode) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -72,7 +72,7 @@ public class FieldDAO {
 		}
 		return "";
 	}
-	/* ¸®½ºÆ® ºÎ¹® °Ë»ö */
+	/* ë¦¬ìŠ¤íŠ¸ ë¶€ë¬¸ ê²€ìƒ‰ */
 	public ArrayList<FieldDTO> getFieldList(String companyCode) {
 		 ArrayList<FieldDTO> fieldList = null;
 		 Connection conn = null;

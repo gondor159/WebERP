@@ -54,7 +54,7 @@ public class CustomFindToModalServlet extends HttpServlet {
 		}
 	}
 	
-	/* ±¸ºĞÀÌ °Å·¡Ã³¸íÀÏ °æ¿ì */
+	/* êµ¬ë¶„ì´ ê±°ë˜ì²˜ëª…ì¼ ê²½ìš° */
 	public String getCusomtToCustomName(String companyCode, String input) {
 		StringBuffer result = new StringBuffer("");
 		result.append("{\"result\":[");
@@ -75,7 +75,7 @@ public class CustomFindToModalServlet extends HttpServlet {
 		return result.toString();
 	}
 	
-	/* ±¸ºĞÀÌ °Å·¡Ã³ÄÚµåÀÏ °æ¿ì */
+	/* êµ¬ë¶„ì´ ê±°ë˜ì²˜ì½”ë“œì¼ ê²½ìš° */
 	public String getCusomtToCustomCode(String companyCode, String input) {
 		StringBuffer result = new StringBuffer("");
 		result.append("{\"result\":[");
@@ -93,7 +93,7 @@ public class CustomFindToModalServlet extends HttpServlet {
 		return result.toString();
 	}
 	
-	/* ±¸ºĞÀÌ »ç¾÷ÀÚµî·Ï¹øÈ£ÀÏ °æ¿ì */
+	/* êµ¬ë¶„ì´ ì‚¬ì—…ìë“±ë¡ë²ˆí˜¸ì¼ ê²½ìš° */
 	public String getCustomToBusinessLicenseNum(String companyCode, String input) {
 		StringBuffer result = new StringBuffer("");
 		result.append("{\"result\":[");

@@ -92,7 +92,7 @@ public class FinancialInstitutionDAO {
 		}
 		return -1;
 	}
-	/* ±İÀ¶°Å·¡Ã³ ÀüÃ¼ °Ë»ö */
+	/* ê¸ˆìœµê±°ë˜ì²˜ ì „ì²´ ê²€ìƒ‰ */
 	public ArrayList<FinancialInstitutionDTO> getFinancialInstitution() {
 		ArrayList<FinancialInstitutionDTO> list = null;
 		Connection conn = null;
@@ -123,7 +123,7 @@ public class FinancialInstitutionDAO {
 		}
 		return list;
 	}
-	/* ±İÀ¶°Å·¡Ã³ ÀÌ¸§ °Ë»ö */
+	/* ê¸ˆìœµê±°ë˜ì²˜ ì´ë¦„ ê²€ìƒ‰ */
 	public ArrayList<FinancialInstitutionDTO> getFinancialInstitutionToName(String financialinstitutionName) {
 		ArrayList<FinancialInstitutionDTO> list = null;
 		Connection conn = null;
@@ -155,7 +155,7 @@ public class FinancialInstitutionDAO {
 		}
 		return list;
 	}
-	/* ±İÀ¶°Å·¡Ã³ ÄÚµå·Î °Ë»ö */
+	/* ê¸ˆìœµê±°ë˜ì²˜ ì½”ë“œë¡œ ê²€ìƒ‰ */
 	public FinancialInstitutionDTO getFinancialInstitutionToCode(String financialinstitutionCode) {
 		FinancialInstitutionDTO dto = new FinancialInstitutionDTO();
 		Connection conn = null;

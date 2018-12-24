@@ -26,6 +26,14 @@
     <url-pattern>/userLogin</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>UserDeveloperServlet</servlet-name>
+    <servlet-class>user.UserDeveloperServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserDeveloperServlet</servlet-name>
+    <url-pattern>/userDeveloperServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>UserIdCheckServlet</servlet-name>
     <servlet-class>user.UserIdCheckServlet</servlet-class>
   </servlet>
@@ -247,7 +255,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>BusinessTypeInsertServlet</servlet-name>
-    <url-pattern>/businessTypeInsertServlet</url-pattern>
+    <url-pattern>/developer/businessTypeInsertServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>BusinessTypeUpdateServlet</servlet-name>
@@ -255,7 +263,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>BusinessTypeUpdateServlet</servlet-name>
-    <url-pattern>/businessTypeUpdateServlet</url-pattern>
+    <url-pattern>/developer/businessTypeUpdateServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>BusinessTypeDeleteServlet</servlet-name>
@@ -263,7 +271,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>BusinessTypeDeleteServlet</servlet-name>
-    <url-pattern>/businessTypeDeleteServlet</url-pattern>
+    <url-pattern>/developer/businessTypeDeleteServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>RightsInsertServlet</servlet-name>
@@ -271,7 +279,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>RightsInsertServlet</servlet-name>
-    <url-pattern>/rightsInsertServlet</url-pattern>
+    <url-pattern>/developer/rightsInsertServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>RightsUpdateServlet</servlet-name>
@@ -279,7 +287,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>RightsUpdateServlet</servlet-name>
-    <url-pattern>/rightsUpdateServlet</url-pattern>
+    <url-pattern>/developer/rightsUpdateServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>RightsDeleteServlet</servlet-name>
@@ -287,7 +295,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>RightsDeleteServlet</servlet-name>
-    <url-pattern>/rightsDeleteServlet</url-pattern>
+    <url-pattern>/developer/rightsDeleteServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>FinancialInstitutionInsertServlet</servlet-name>
@@ -295,7 +303,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>FinancialInstitutionInsertServlet</servlet-name>
-    <url-pattern>/financialInstitutionInsertServlet</url-pattern>
+    <url-pattern>/developer/financialInstitutionInsertServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>FinancialInstitutionUpdateServlet</servlet-name>
@@ -303,7 +311,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>FinancialInstitutionUpdateServlet</servlet-name>
-    <url-pattern>/financialInstitutionUpdateServlet</url-pattern>
+    <url-pattern>/developer/financialInstitutionUpdateServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>FinancialInstitutionDeleteServlet</servlet-name>
@@ -311,6 +319,30 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>FinancialInstitutionDeleteServlet</servlet-name>
-    <url-pattern>/financialInstitutionDeleteServlet</url-pattern>
+    <url-pattern>/developer/financialInstitutionDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ProjectGroupRegistServlet</servlet-name>
+    <servlet-class>projectgroup.ProjectGroupRegistServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProjectGroupRegistServlet</servlet-name>
+    <url-pattern>/basisInformationManagement/projectGroupRegistServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ProjectGroupGetListServlet</servlet-name>
+    <servlet-class>projectgroup.ProjectGroupGetListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProjectGroupGetListServlet</servlet-name>
+    <url-pattern>/basisInformationManagement/projectGroupGetListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ProjectGroupGetServlet</servlet-name>
+    <servlet-class>projectgroup.ProjectGroupGetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProjectGroupGetServlet</servlet-name>
+    <url-pattern>/basisInformationManagement/projectGroupGetServlet</url-pattern>
   </servlet-mapping>
 </web-app>

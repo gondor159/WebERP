@@ -21,7 +21,7 @@ public class UserLoginServlet extends HttpServlet {
 		if(userID == null || userID.equals("") || userPassword == null || userPassword.equals("")) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('¾ÆÀÌµğ ¶Ç´Â ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏÁö ¾Ê¾Ò½À´Ï´Ù.')");
+			script.println("alert('ì•„ì´ë”” ë˜ëŠ” ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.')");
 			script.println("location.href = 'join.jsp'");
 			script.println("</script>");
 			script.close();
@@ -39,24 +39,24 @@ public class UserLoginServlet extends HttpServlet {
 		} else if(result == 2) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('ºñ¹Ğ¹øÈ£°¡ Æ²·È½À´Ï´Ù.')");
-			script.println("history.back();'");
+			script.println("alert('ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤.')");
+			script.println("history.back();");
 			script.println("</script>");
 			script.close();
 			return;
 		} else if(result == 0) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('Á¸ÀçÇÏÁö ¾Ê´Â ¾ÆÀÌµğ ÀÔ´Ï´Ù..')");
-			script.println("history.back();'");
+			script.println("alert('ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ì•„ì´ë”” ì…ë‹ˆë‹¤..')");
+			script.println("history.back();");
 			script.println("</script>");
 			script.close();
 			return;
 		} else if(result == -1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('ÁË¼ÛÇÕ´Ï´Ù. µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù°¡ ¹ß»ıÇß½À´Ï´Ù. ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.')");
-			script.println("history.back();'");
+			script.println("alert('ë°ì´í„°ë² ì´ìŠ¤ ì˜¤ë¥˜ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.')");
+			script.println("history.back();");
 			script.println("</script>");
 			script.close();
 			return;

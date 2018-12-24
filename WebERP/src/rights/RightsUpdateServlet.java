@@ -27,7 +27,7 @@ public class RightsUpdateServlet extends HttpServlet {
 		if (rightsCode == null || rightsCode.equals("") || rightsName == null || rightsName.equals("") || editRightsCode == null || editRightsCode.equals("")) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('¸ğµç°ªÀ» ÀÔ·ÂÇÏ¼¼¿ä.')");
+			script.println("alert('ëª¨ë“ ê°’ì„ ì…ë ¥í•˜ì„¸ìš”.')");
 			script.println("history.back();");
 			script.println("</script>");
 			script.close();
@@ -39,7 +39,7 @@ public class RightsUpdateServlet extends HttpServlet {
 		if (Result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('¼öÁ¤ ¼º°ø.')");
+			script.println("alert('ìˆ˜ì • ì„±ê³µ.')");
 			script.println("location.href='dbRights.jsp'");
 			script.println("</script>");
 			script.close();
@@ -48,7 +48,7 @@ public class RightsUpdateServlet extends HttpServlet {
 		} else {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('¼öÁ¤ ½ÇÆĞ.')");
+			script.println("alert('ìˆ˜ì • ì‹¤íŒ¨.')");
 			script.println("history.back();");
 			script.println("</script>");
 			script.close();

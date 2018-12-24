@@ -42,38 +42,33 @@
 
 <title>회사 정보 등록</title>
 
-<!-- Modal table CSS -->
-<link href="../css/table.css" rel="stylesheet">
-
-<!-- Bootstrap Core CSS -->
-<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- MetisMenu CSS -->
-<link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-<!-- DataTables CSS -->
-<link href="../vendor/datatables-plugins/dataTables.bootstrap.css"
-	rel="stylesheet">
-
-<!-- DataTables Responsive CSS -->
-<link href="../vendor/datatables-responsive/dataTables.responsive.css"
-	rel="stylesheet">
-
-<!-- Custom CSS -->
-<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-<!-- Custom Fonts -->
-<link href="../vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
+<!-- CSS -->
+	<!-- Modal table CSS -->
+	<link href="../css/table.css" rel="stylesheet">
+	<!-- Bootstrap Core CSS -->
+	<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- MetisMenu CSS -->
+	<link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+	<!-- DataTables CSS -->
+	<link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+	<!-- DataTables Responsive CSS -->
+	<link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+	<!-- Custom Fonts -->
+	<link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+	<![endif]-->
+<!-- /CSS -->
+
 <!-- jQuery -->
-<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.js" charset="UTF-8"></script>
+<!-- /jQuery -->
+
 <script>
 	/* 아이디 검색 결과값 가져오기 function */
 	function insertUserID() {
@@ -119,53 +114,47 @@
 		});
 	}
 </script>
+<!-- 버튼 활성화 -->
 <script>
 $(function(){
 	var companyCode = encodeURIComponent('<%=companyCont.getCompanyCode()%>');
-    $("#findUserButton").click(function(){
-       $('#findUser').modal({
-        				remote : '/modal/findUserModal.jsp'
-              });
-    })
-    $("#findPlaceButton").click(function(){
-       $('#findPlace').modal({
-        				remote : '/modal/findPlaceModal.jsp?companyCode=' + companyCode
-              });
-    })
-     $("#findDeptButton").click(function(){
-       $('#findDept').modal({
-        				remote : '/modal/findDeptModal.jsp?companyCode=' + companyCode
-              });
-    })
+	$("#searchUserButton").click(function(){
+		$('#searchUser').modal({
+			remote : 'modal/searchUserModal.jsp'
+		});
+	})
+	$("#searchPlaceButton").click(function(){
+		$('#searchPlace').modal({
+			remote : 'modal/searchPlaceModal.jsp?companyCode=' + companyCode
+		});
+	})
+	$("#searchDeptButton").click(function(){
+		$('#searchDept').modal({
+			remote : 'modal/searchDeptModal.jsp?companyCode=' + companyCode
+		});
+	})
 });
 </script>
 </head>
 <body>
-	<!-- Navigation -->
 	<nav class="navbar navbar-default navbar-static-top" role="navigation"
 		style="margin-bottom: 0">
 		<%@include file="../main/headNav.jsp"%>
-		<!-- /.navbar-top-links -->
-
 		<%@include file="../main/sideNav.jsp" %>
-		<!-- /.navbar-static-side -->
 	</nav>
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-6">
 				<h1 class="page-header">등록사원</h1>
 			</div>
-			<!-- /.col-lg-6 -->
 			<div class="col-lg-6">
 				<h1 class="page-header">사원등록</h1>
 			</div>
-			<!-- /.col-lg-6 -->
 		</div>
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="panel panel-default">
 					<div class="panel-heading">등록된 사원을 확인 할 수 있습니다.</div>
-					<!-- /.panel-heading -->
 					<div class="panel-body">
 						<table width="100%"
 							class="table table-striped table-bordered table-hover"
@@ -211,13 +200,9 @@ $(function(){
 								%>
 							</tbody>
 						</table>
-						<!-- /.table-responsive -->
 					</div>
-					<!-- /.panel-body -->
 				</div>
-				<!-- /.panel -->
 			</div>
-			<!-- /.col-lg-6 -->
 			<div class="col-lg-6">
 				<div class="panel panel-default">
 					<div class="panel-heading">간단한 사원 정보를 입력합니다.</div>
@@ -225,99 +210,85 @@ $(function(){
 						<div class="row">
 							<div class="col-lg-12">
 								<form role="form" method="POST" action="./employeeRegistServlet">
-									<input type="hidden" name="companyCode"
-										value="<%=companyCont.getCompanyCode()%>">
+									<input type="hidden" name="companyCode" value="<%=companyCont.getCompanyCode()%>">
 									<table class="table table-striped">
 										<tr>
-											<td style="text-align: right;">사원 ID</td>
-											<td><input type="text" id="userID" name="userID"></td>
-											<td><button class="btn btn-default" id="findUserButton" type="button"><i class="fa fa-search-plus"></i></button></td>
+											<td style="text-align: right;"><h5>사원 ID</h5></td>
+											<td><input class="form-control" type="text" id="userID" name="userID"></td>
+											<td><button class="btn btn-default" id="searchUserButton" type="button"><i class="fa fa-search-plus"></i></button></td>
 											<td></td>
 										</tr>
 										<tr>
-											<td style="text-align: right;">사원번호</td>
-											<td colspan="2"><input type="text" name="employeeNum"></td>
-											<td></td>
+											<td style="text-align: right;"><h5>사원번호</h5></td>
+											<td><input class="form-control" type="text" name="employeeNum"></td>
+											<td colspan="2"></td>
 										</tr>
 										<tr>
-                            				<td style="text-align: right;">사업장</td>
-                            				<td><input id="placeCode" type="text" name="placeCode" readonly></td>
-                            				<td style="text-align: left;"><button class="btn btn-default" id="findPlaceButton" type="button"><i class="fa fa-search-plus "></i></button></td>
-                            				<td><input id="placeName" type="text" readonly></td>
+                            				<td style="text-align: right;"><h5>사업장</h5></td>
+                            				<td><input class="form-control" id="placeCode" type="text" name="placeCode" readonly></td>
+                            				<td style="text-align: left;"><button class="btn btn-default" id="searchPlaceButton" type="button"><i class="fa fa-search-plus "></i></button></td>
+                            				<td><input class="form-control" id="placeName" type="text" readonly></td>
                             			</tr>
                             			<tr>
-                            				<td style="text-align: right;">부서</td>
-                            				<td><input id="departmentCode" type="text" name="departmentCode" readonly><input id="fieldCode" type="hidden" name="fieldCode"></td>
-                            				<td style="text-align: left;"><button class="btn btn-default" id="findDeptButton" type="button"><i class="fa fa-search-plus "></i></button></td>
-                            				<td><input id="departmentName" type="text" readonly></td>
+                            				<td style="text-align: right;"><h5>부서</h5></td>
+                            				<td><input class="form-control" id="departmentCode" type="text" name="departmentCode" readonly><input id="fieldCode" type="hidden" name="fieldCode"></td>
+                            				<td style="text-align: left;"><button class="btn btn-default" id="searchDeptButton" type="button"><i class="fa fa-search-plus "></i></button></td>
+                            				<td><input class="form-control" id="departmentName" type="text" readonly></td>
                             			</tr>
                             			<tr>
-											<td style="text-align: right;">입사일</td>
-											<td colspan="2"><input id="joinDate" type="date" placeholder="YYYY-MM-DD" name="joinDate"></td>
+											<td style="text-align: right;"><h5>입사일</h5></td>
+											<td colspan="2"><input class="form-control" id="joinDate" type="date" placeholder="YYYY-MM-DD" name="joinDate"></td>
 											<td></td>
 										</tr>
 									</table>
 									<button class="btn btn-outline btn-primary btn-lg btn-block" type="submit">등록</button>
 								</form>
 							</div>
-							<!-- /.col-lg-12 (nested) -->
 						</div>
-						<!-- /.row (nested) -->
 					</div>
-					<!-- /.panel-body -->
 				</div>
-				<!-- /.panel -->
 			</div>
-			<!-- /.col-lg-6 -->
 		</div>
-		<!-- /.row -->
 	</div>
 	<!-- Modal -->
 	<!-- 유저 검색 -->
-	<div class="modal fade" id="findUser" tabindex="-1" role="dialog"
-		aria-labelledby="findUserLabel" aria-hidden="true">
+	<div class="modal fade" id="searchUser" tabindex="-1" role="dialog"
+		aria-labelledby="searchUserLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
 	</div>
 	<!-- 사업장 검색 -->
-	<div class="modal fade" id="findPlace" tabindex="-1" role="dialog"
-		aria-labelledby="findPlaceLabel" aria-hidden="true">
+	<div class="modal fade" id="searchPlace" tabindex="-1" role="dialog"
+		aria-labelledby="searchPlaceLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
 	</div>
 	<!-- 부서 검색 -->
-	<div class="modal fade" id="findDept" tabindex="-1" role="dialog"
-		aria-labelledby="findDeptLabel" aria-hidden="true">
+	<div class="modal fade" id="searchDept" tabindex="-1" role="dialog"
+		aria-labelledby="searchDeptLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
+	
+<!-- JavaScript -->	
 	<!-- jQuery -->
 	<script src="../vendor/jquery/jquery.min.js"></script>
-
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-
 	<!-- Metis Menu Plugin JavaScript -->
 	<script src="../vendor/metisMenu/metisMenu.min.js"></script>
-
 	<!-- DataTables JavaScript -->
 	<script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
 	<script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
 	<script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
-
 	<!-- Custom Theme JavaScript -->
 	<script src="../dist/js/sb-admin-2.js"></script>
-
 	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
 	<script>
 		$(document).ready(function() {
@@ -336,5 +307,6 @@ $(function(){
 		// popover demo
 		$("[data-toggle=popover]").popover()
 	</script>
+<!-- /JavaScript -->	
 </body>
 </html>

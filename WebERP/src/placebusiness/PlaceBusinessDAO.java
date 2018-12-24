@@ -21,7 +21,7 @@ public class PlaceBusinessDAO {
 			e.printStackTrace();
 		}
 	}
-	/* »ç¾÷Àå µî·Ï */
+	/* ì‚¬ì—…ì¥ ë“±ë¡ */
 	public int registPlace(String companyCode, String placeCode, String businessLicenseNum, String corporateLicenseNum,
 			String companyName, String companyEngName, String chiefID, String postNum, String address,
 			String addressEng, String tel, String fax, String businessCondition, String businessType,
@@ -64,7 +64,7 @@ public class PlaceBusinessDAO {
 		}
 		return -1;
 	}
-	/* ¸®½ºÆ® »ç¾÷Àå°Ë»ö */
+	/* ë¦¬ìŠ¤íŠ¸ ì‚¬ì—…ì¥ê²€ìƒ‰ */
 	public ArrayList<PlaceBusinessDTO> getPlaceList(String companyCode) {
 		ArrayList<PlaceBusinessDTO> placeList = null;
 		Connection conn = null;
@@ -113,7 +113,7 @@ public class PlaceBusinessDAO {
 		}
 		return placeList;
 	}
-	/* »ç¾÷Àå ÀÌ¸§ °Ë»ö */
+	/* ì‚¬ì—…ì¥ ì´ë¦„ ê²€ìƒ‰ */
 	public String getPlaceName(String companyCode, String placeCode) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;

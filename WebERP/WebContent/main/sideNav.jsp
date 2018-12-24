@@ -42,7 +42,7 @@
 							<li><a href="#">품목군등록</a></li>
 							<li><a href="#">품목등록</a></li>
 							<li><a href="#">창고/공정(생산)/외주공정등록</a></li>
-							<li><a href="#">프로젝트등록</a></li>
+							<li><a href="../basisInformationManagement/projectRegist.jsp">프로젝트등록</a></li>
 							<li><a href="#">관리내역관리</a></li>
 							<li><a href="#">회계연결계정과목등록</a></li>
 							<li><a href="#">물류관리내역등록</a></li>

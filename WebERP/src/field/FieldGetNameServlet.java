@@ -7,9 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class FieldGetNameServlet
- */
 @WebServlet("/FieldGetNameServlet")
 public class FieldGetNameServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

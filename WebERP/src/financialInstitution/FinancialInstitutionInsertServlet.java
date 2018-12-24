@@ -22,7 +22,7 @@ public class FinancialInstitutionInsertServlet extends HttpServlet {
 		if (financialInstitutionCode == null || financialInstitutionCode.equals("")) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('PK´Â nullÀÌ ¿Ã ¼ö ¾ø½À´Ï´Ù.')");
+			script.println("alert('PKëŠ” nullì´ ì˜¬ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.')");
 			script.println("history.back();");
 			script.println("</script>");
 			script.close();
@@ -34,7 +34,7 @@ public class FinancialInstitutionInsertServlet extends HttpServlet {
 		if (Result == 1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('ÀÔ·Â ¼º°ø.')");
+			script.println("alert('ì…ë ¥ ì„±ê³µ.')");
 			script.println("location.href='dbFinancialInstitution.jsp'");
 			script.println("</script>");
 			script.close();
@@ -43,7 +43,7 @@ public class FinancialInstitutionInsertServlet extends HttpServlet {
 		} else {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('ÀÔ·Â ½ÇÆĞ.')");
+			script.println("alert('ì…ë ¥ ì‹¤íŒ¨.')");
 			script.println("history.back();");
 			script.println("</script>");
 			script.close();

@@ -48,7 +48,7 @@ public class EmployeeFindToModalServlet extends HttpServlet {
 		}
 	}
 	
-	/* ±¸ºĞÀÌ »ç¿øÀÌ¸§ÀÏ °æ¿ì */
+	/* êµ¬ë¶„ì´ ì‚¬ì›ì´ë¦„ì¼ ê²½ìš° */
 	public String getEmployeeToName(String companyCode, String input) {
 		StringBuffer result = new StringBuffer("");
 		result.append("{\"result\":[");
@@ -73,7 +73,7 @@ public class EmployeeFindToModalServlet extends HttpServlet {
 		return result.toString();
 	}
 	
-	/* ±¸ºĞÀÌ »ç¿øÄÚµåÀÏ °æ¿ì */
+	/* êµ¬ë¶„ì´ ì‚¬ì›ì½”ë“œì¼ ê²½ìš° */
 	public String getEmployeeToCode(String companyCode, String input) {
 		StringBuffer result = new StringBuffer("");
 		result.append("{\"result\":[");
