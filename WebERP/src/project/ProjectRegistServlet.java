@@ -41,7 +41,7 @@ public class ProjectRegistServlet extends HttpServlet {
 					|| division == null || division.equals("")) {
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("alert('모든값을 입력해주세요.')");
+				script.println("alert('필수값을 입력해주세요.')");
 				script.println("history.back();");
 				script.println("</script>");
 				script.close();
@@ -62,7 +62,7 @@ public class ProjectRegistServlet extends HttpServlet {
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("alert('등록에 성공하였습니다.')");
-				script.println("location.href = 'ProjectRegist.jsp'");
+				script.println("location.href = 'projectRegist.jsp'");
 				script.println("</script>");
 				script.close();
 				return;

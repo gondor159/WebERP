@@ -199,6 +199,12 @@ function insertCollectAddFunction() {
 <script>
 $(function(){
 	var companyCode = encodeURIComponent('<%=companyCont.getCompanyCode()%>');
+	/* 거래처 분류 등록 버튼 */
+	$("#registCustomGroupBtn").click(function(){
+		$('#insertCustomGroup').modal({
+			remote : 'modal/insertCustomGroupModal.jsp'
+		});
+	})
 	/* 거래처 검색 버튼 */
 	$("#searchCustomBtn").click(function(){
 		$('#searchCustom').modal({
@@ -281,7 +287,6 @@ $(function(){
 </script>
 </head>
 <body>
-	<!-- Navigation -->
 	<nav class="navbar navbar-default navbar-static-top" role="navigation"
 		style="margin-bottom: 0">
 		<%@include file="../main/headNav.jsp"%>
@@ -332,17 +337,21 @@ $(function(){
 							<button class="btn btn-outline btn-primary" type="button" onclick="editCustom();">수정</button>
 							<button class="btn btn-outline btn-danger" type="button">삭제</button>
 						</div>
-						<!-- /.table-responsive -->
 					</div>
-					<!-- /.panel-body -->
 				</div>
-				<!-- /.panel -->
 			</div>
-			<!-- /.col-lg-6 -->
 			<div class="col-lg-7">
 				<div class="panel panel-default">
-					<div class="panel-heading">거래처 정보를 확인합니다.</div>
-					<!-- /.panel-heading -->
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-md-10">
+								<h5>거래처 등록</h5>
+							</div>
+							<div class="col-md-2">
+								<button class="btn btn-default" id="registCustomGroupBtn" type="button">거래처 분류등록</button>
+							</div>
+						</div>
+					</div>
 					<form class="panel-body" method="POST" action="./customRegistServlet"> <!-- 이부분에 if 를 써서 파라미터 값이 없으면 등록 있으면 수정 -->
 						<input type="hidden" value="<%= companyCont.getCompanyCode() %>" name="companyCode">
 						<div class="row">
@@ -358,7 +367,6 @@ $(function(){
                             <li><a href="#alphaSession" data-toggle="tab">추가등록사항</a>
                             </li>
                         </ul>
-                        <!-- Tab panes -->
                         <div class="tab-content">
                             <div class="tab-pane fade in active" id="baseSession">
                             	<br>
@@ -392,13 +400,13 @@ $(function(){
                             		</tr>
                             		<tr>
                             			<td style="text-align: right;"><h5>우편번호</h5></td>
-                            			<td><input class="form-control" type="text" maxlength="5" name="postNum" id="postNum"></td>
+                            			<td><input class="form-control" type="text" maxlength="5" name="postNum" id="postNum" readonly></td>
                             			<td><button class="btn btn-default" id="searchAddressBtn" type="button"><i class="fa fa-search-plus"></i></button></td>
                             			<td></td>
                             		</tr>
                             		<tr>
                             			<td style="text-align: right;"><h5>주소</h5></td>
-                            			<td colspan="3"><input class="form-control" type="text" name="address" id="address"></td>
+                            			<td colspan="3"><input class="form-control" type="text" name="address" id="address" readonly></td>
                             		</tr>
                             		<tr>
                             			<td style="text-align: right;"><h5>전화번호</h5></td>
@@ -462,7 +470,7 @@ $(function(){
                             		</tr>
                             		<tr>
                             			<td style="text-align: right;"><h5>수금거래처</h5></td>
-                            			<td><input class="form-control" id="collectCompany" type="text" name="collectCompany"></td>
+                            			<td><input class="form-control" id="collectCompany" type="text" name="collectCompany" readonly></td>
                             			<td style="text-align: left;"><button class="btn btn-default" id="searchCollectCompanyBtn" type="button"><i class="fa fa-search-plus "></i></button></td>
                             			<td><input class="form-control" id="collectCompanyName" type="text" readonly></td>
                             		</tr>

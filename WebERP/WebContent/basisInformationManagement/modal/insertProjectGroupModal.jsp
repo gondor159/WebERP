@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <script>
-	function insertPGFunction() {
+	function registPGFunction() {
 		var companyCode = $('#paramCompanyCodeToIPG').val();
 		var projectGroup = $('#projectGroupIPG').val();
 		var groupName = $('#groupNameIPG').val();
@@ -76,7 +76,7 @@
 	<div class="modal-footer">
 		<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 		<button type="button" class="btn btn-primary"
-			onclick="insertPGFunction();">등록</button>
+			onclick="registPGFunction();">등록</button>
 	</div>
 </body>
 </html>

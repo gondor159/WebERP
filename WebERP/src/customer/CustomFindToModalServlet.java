@@ -82,7 +82,7 @@ public class CustomFindToModalServlet extends HttpServlet {
 		CustomerDTO list = new CustomerDAO().getCustomerListToCustomCode(companyCode, input);
 		BusinessTypeDAO businessDAO = new BusinessTypeDAO();
 		BusinessTypeDTO type = new BusinessTypeDTO();
-		if(list == null) return "";
+		if(list.getCustomCode() == null) return "";
 		type = businessDAO.getBusinessType(list.getBusinessCondition(), list.getBusinessType());
 		result.append("[{\"value\": \"" + list.getCustomerName() + "\"},");
 		result.append("{\"value\": \"" + list.getCustomCode() + "\"},");

@@ -4,8 +4,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- 주소검색 스크립트 -->
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" charset="UTF-8"></script>
 <script type="text/javascript" src="../js/searchAdd.js" charset="UTF-8"></script>
 </head>
 <body>

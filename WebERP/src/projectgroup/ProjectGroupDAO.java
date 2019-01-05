@@ -160,7 +160,7 @@ public class ProjectGroupDAO {
 		return list;
 	}
 	/* 단일 프로젝트 그룹 검색 (분류코드) */
-	ProjectGroupDTO getProjectGroup(String companyCode, String projectGroup) {
+	public ProjectGroupDTO getProjectGroup(String companyCode, String projectGroup) {
 		ProjectGroupDTO group = null;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -193,5 +193,34 @@ public class ProjectGroupDAO {
 			}
 		}
 		return group;
+	}
+	
+	/* 단일 프로젝트 분류 이름 가져오기 */
+	public String getProjectGroupName(String companyCode, String projectGroup) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String name = "";
+		String SQL = "SELECT groupName FROM PROJECTGROUP WHERE companyCode = ? AND projectGroup = ?";
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, companyCode);
+			pstmt.setString(2, projectGroup);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				name = rs.getString("groupName");
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return name;
 	}
 }

@@ -198,6 +198,12 @@ function insertCollectAddFunction() {
 <script>
 $(function(){
 	var companyCode = encodeURIComponent('<%=companyCont.getCompanyCode()%>');
+	/* 거래처 분류 등록 버튼 */
+	$("#registCustomGroupBtn").click(function(){
+		$('#insertCustomGroup').modal({
+			remote : 'modal/insertCustomGroupModal.jsp'
+		});
+	})
 	/* 거래처 검색 버튼 */
 	$("#searchCustomBtn").click(function(){
 		$('#searchCustom').modal({
@@ -334,8 +340,16 @@ $(function(){
 			</div>
 			<div class="col-lg-7">
 				<div class="panel panel-default">
-					<div class="panel-heading">거래처 정보를 확인합니다.</div>
-					<!-- /.panel-heading -->
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-md-10">
+								<h5>거래처 수정</h5>
+							</div>
+							<div class="col-md-2">
+								<button class="btn btn-default" id="registCustomGroupBtn" type="button">거래처 분류등록</button>
+							</div>
+						</div>
+					</div>
 					<form class="panel-body" method="POST" action="./customRegistServlet"> <!-- 이부분에 if 를 써서 파라미터 값이 없으면 등록 있으면 수정 -->
 						<input type="hidden" value="<%= companyCont.getCompanyCode() %>" name="companyCode">
 						<div class="row">
@@ -383,12 +397,12 @@ $(function(){
                             		</tr>
                             		<tr>
                             			<td style="text-align: right;"><h5>우편번호</h5></td>
-                            			<td><input class="form-control" type="text" maxlength="5" name="postNum" id="postNum" value="<%= custom.getPostNum() %>"></td>
+                            			<td><input class="form-control" type="text" maxlength="5" name="postNum" id="postNum" value="<%= custom.getPostNum() %>" readonly></td>
                             			<td colspan="2"><button class="btn btn-default" id="searchAddressBtn" type="button"><i class="fa fa-search-plus"></i></button></td>
                             		</tr>
                             		<tr>
                             			<td style="text-align: right;"><h5>주소</h5></td>
-                            			<td colspan="3"><input type="text" style="width: 85%" name="address" id="address" value="<%= custom.getAddress() %>"></td>
+                            			<td colspan="3"><input type="text" style="width: 85%" name="address" id="address" value="<%= custom.getAddress() %>" readonly></td>
                             		</tr>
                             		<tr>
                             			<td style="text-align: right;"><h5>전화번호</h5></td>
@@ -434,25 +448,25 @@ $(function(){
                             	<table class="table table-striped">
                             		 <tr>
                             			<td style="text-align: right;"><h5>프로젝트</h5></td>
-                            			<td><input class="form-control" type="text" name="project" value="<%= custom.getProject()  %>"></td>
+                            			<td><input class="form-control" type="text" name="project" value="<%= custom.getProject()  %>" readonly></td>
                             			<td style="text-align: left;"><button class="btn btn-default" id="searchProjectBtn" type="button"><i class="fa fa-search-plus "></i></button></td>
                             			<td><input class="form-control" id="projectName" type="text" value="<%=  %>" readonly></td>
                             		</tr>
                             		<tr>
                             			<td style="text-align: right;"><h5>거래처분류</h5></td>
-                            			<td><input class="form-control" type="text" name="customGroup" value="<%= custom.getCustomGroup() %>"></td>
+                            			<td><input class="form-control" type="text" name="customGroup" value="<%= custom.getCustomGroup() %>" readonly></td>
                             			<td style="text-align: left;"><button class="btn btn-default" id="searchCustomGroupBtn" type="button"><i class="fa fa-search-plus "></i></button></td>
                             			<td><input class="form-control" id="customGroupName" type="text" value="<%=  %>" readonly></td>
                             		</tr>
                             		<tr>
                             			<td style="text-align: right;"><h5>거래처등급</h5></td>
-                            			<td><input class="form-control" type="text" name="customGrade" value="<%= custom.getCustomGrade() %>"></td>
+                            			<td><input class="form-control" type="text" name="customGrade" value="<%= custom.getCustomGrade() %>" readonly></td>
                             			<td style="text-align: left;"><button class="btn btn-default" id="searchCustomGradeBtn" type="button"><i class="fa fa-search-plus "></i></button></td>
                             			<td><input class="form-control" type="text" value="<%=  %>" readonly></td>
                             		</tr>
                             		<tr>
                             			<td style="text-align: right;"><h5>수금거래처</h5></td>
-                            			<td><input class="form-control" id="collectCompany" type="text" name="collectCompany" value="<%= custom.getCollectCompany() %>"></td>
+                            			<td><input class="form-control" id="collectCompany" type="text" name="collectCompany" value="<%= custom.getCollectCompany() %>" readonly></td>
                             			<td style="text-align: left;"><button class="btn btn-default" id="searchCollectCompanyBtn" type="button"><i class="fa fa-search-plus "></i></button></td>
                             			<td><input class="form-control" id="collectCompanyName" type="text" value="<%=  %>" readonly></td>
                             		</tr>

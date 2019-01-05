@@ -21,6 +21,7 @@
 	}
 	
 	CompanyDTO companyCont = new CompanyDAO().getCompanyToID(userID);
+	ArrayList<ProjectDTO> projectList = new ProjectDAO().getProjectList(companyCont.getCompanyCode());
 %>
 <!DOCTYPE html>
 <html>
@@ -60,6 +61,7 @@
 <!-- /jQuery -->
 
 <script>
+	/* 프로젝트 그룹 등록 */
 	function insertPGFunction() {
 		var companyCode =  encodeURIComponent('<%=companyCont.getCompanyCode()%>');
 		var projectGroup = $('input[name="selectProjectGroup"]:checked').val();
@@ -76,6 +78,60 @@
 				var result = parsed.result;
 				$('#projectGroup').attr('value', result[0].value);
 				$('#projectGroupName').attr('value', result[1].value);
+			}
+		});
+	}
+	/* 원청회사 등록 */
+	function insertCCFunction() {
+		var companyCode =  encodeURIComponent('<%=companyCont.getCompanyCode()%>');
+		var customCode = $('input[name="selectCustomToSearch"]:checked').val();
+		$.ajax({
+			type : 'POST',
+			url : './customerGetNameServlet',
+			data : {
+				companyCode : companyCode,
+				customCode : customCode
+			},
+			success : function(data) {
+				if(data == "") return;
+				var parsed = JSON.parse(data);
+				var result = parsed.result;
+				$('#contractCompanyName').attr('value', result[0].value);
+			}
+		});
+		$('#contractCompany').attr('value', customCode);
+	}
+	/* 프로젝트 수정 */
+	function editProject() {
+		var projectCode = $('input[name="selectProject"]:checked').val();
+		if (projectCode != null) {
+			location.href = 'projectEdit.jsp?projectCode=' + projectCode;
+		} else {
+			alert('프로젝트를 선택하여 주세요.');
+		}
+	}
+	/* 프로젝트 삭제 */
+	function deleteProject() {
+		var companyCode =  encodeURIComponent('<%=companyCont.getCompanyCode()%>');
+		var projectCode = $('input[name="selectProject"]:checked').val();
+		$.ajax({
+			type : 'POST',
+			url : './projectDeleteSerlvet',
+			data : {
+				companyCode : companyCode,
+				projectCode : projectCode
+			},
+			success : function(result) {
+				if(result == "9") {
+					alert('프로젝트를 선택하여 주세요.');
+					return;
+				} else if(result == "-1") {
+					alert('데이터베이스 오류입니다.');
+					return;
+				} else {
+					alert('삭제되었습니다.');
+					location.reload();
+				}
 			}
 		});
 	}
@@ -97,6 +153,12 @@ $(function() {
 			remote : 'modal/insertProjectGroupModal.jsp?companyCode=' + companyCode
 		});
 	})
+	/* 원청회사 검색 버튼 */
+	$("#searchContractCompanyBtn").click(function(){
+		$('#searchContractCompany').modal({
+			remote : 'modal/searchContractCompanyModal.jsp?companyCode=' + companyCode
+		});
+	})
 })
 </script>
 </head>
@@ -115,10 +177,8 @@ $(function() {
 			<div class="col-lg-5">
 				<div class="panel panel-default">
 					<div class="panel-heading">등록된 프로젝트를 확인 할 수 있습니다.</div>
-					<!-- /.panel-heading -->
 					<div class="panel-body">
-						<table width="100%"
-							class="table table-striped table-bordered table-hover">
+						<table class="table table-striped table-bordered table-hover">
 							<thead>
 								<tr>
 									<th><i class="fa fa-check-square-o"></i></th>
@@ -127,10 +187,23 @@ $(function() {
 									<th>구분</th>
 								</tr>
 							</thead>
+							<tbody>
+								<% 
+									for(int i = 0; i < projectList.size(); i++) {
+										ProjectDTO project = projectList.get(i);
+								%>
+								<tr>
+									<td><input type="radio" name="selectProject" value="<%= project.getProjectCode() %>"></td>
+									<td><%= project.getProjectCode() %></td>
+									<td><%= project.getProjectName() %></td>
+									<td><%= project.getDivision() %></td>
+								</tr>
+								<% } %>
+							</tbody>
 						</table>
 						<div style="float: right;">
 							<button class="btn btn-outline btn-primary" type="button" onclick="editProject();">수정</button>
-							<button class="btn btn-outline btn-danger" type="button">삭제</button>
+							<button class="btn btn-outline btn-danger" type="button" onclick="deleteProject();">삭제</button>
 						</div>
 					</div>
 				</div>
@@ -145,7 +218,7 @@ $(function() {
 					</div>
 					<form class="panel-body" method="POST"
 						action="./projectRegistServlet">
-						<input type="hidden" name="companyCode" value="123">
+						<input type="hidden" name="companyCode" value="<%=companyCont.getCompanyCode()%>">
 						<div class="row">
 							<div class="col-lg-12">
 								<br>
@@ -174,9 +247,9 @@ $(function() {
 									</tr>
 									<tr>
 										<td style="text-align: right;"><h5>원청회사</h5></td>
-										<td><input class="form-control" id="contractCompany" type="text" name="contractCompany"></td>
+										<td><input class="form-control" id="contractCompany" type="text" name="contractCompany" readonly></td>
 										<td style="text-align: left;">
-											<button class="btn btn-default" id="searchCustomBtn" type="button"><i class="fa fa-search-plus "></i></button>
+											<button class="btn btn-default" id="searchContractCompanyBtn" type="button"><i class="fa fa-search-plus "></i></button>
 										</td>
 										<td><input class="form-control" id="contractCompanyName" type="text" readonly></td>
 
@@ -190,7 +263,7 @@ $(function() {
 										<td style="text-align: right;"><h5>원가구분</h5></td>
 										<td>
 											<select class="form-control" name="costDivision">
-												<option value="manufacture">제조</option>
+												<option value="manufac">제조</option>
 												<option value="parcelOut">분양</option>
 												<option value="contract">도급</option>
 												<option value="etc">기타</option>
@@ -215,7 +288,7 @@ $(function() {
 									</tr>
 									<tr>
 										<td style="text-align: right;"><h5>프로젝트 분류</h5></td>
-										<td><input class="form-control" id="projectGroup" type="text" name="projectGroup"></td>
+										<td><input class="form-control" id="projectGroup" type="text" name="projectGroup" readonly></td>
 										<td style="text-align: left;">
 											<button class="btn btn-default" id="searchProjectGroupBtn" type="button"><i class="fa fa-search-plus"></i></button>
 										</td>
@@ -275,13 +348,19 @@ $(function() {
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>
-			<!-- /.modal-content -->
 		</div>
-		<!-- /.modal-dialog -->
 	</div>
 	<!-- 프로젝트 분류 등록 -->
 	<div class="modal fade" id="insertProjectGroup" tabindex="-1" role="dialog"
 		aria-labelledby="insertProjectGroupLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+			</div>
+		</div>
+	</div>
+	<!-- 원청회사 검색 -->
+	<div class="modal fade" id="searchContractCompany" tabindex="-1" role="dialog"
+		aria-labelledby="searchContractCompanyLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 			</div>

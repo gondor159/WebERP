@@ -89,6 +89,21 @@
 		$('#establishmentDate').attr('value',
 				decodeURIComponent(establishmentDate));
 		$('#startDate').attr('value', decodeURIComponent(startDate));
+		$.ajax({
+			type : 'POST',
+			url : './businessTypeGetNameServlet',
+			data : {
+				businessCondition : businessCondition,
+				businessType : businessType
+			},
+			success : function(data) {
+				if(data == "") return;
+				var parsed = JSON.parse(data);
+				var result = parsed.result;
+				$('#businessConditionName').attr('value', result[0].value);
+				$('#businessTypeName').attr('value', result[1].value);
+			}
+		});
 	}
 	/* 주소 등록 */
 	function insertAddFunction() {

@@ -3,10 +3,10 @@ package project;
 public class ProjectDTO {
 	String companyCode;
 	String projectCode;
-	String projcetName;
+	String projectName;
 	String division;
-	String projcetSince;
-	String projcetTill;
+	String projectSince;
+	String projectTill;
 	String contractCompany;
 	String startDate;
 	String costDivision;
@@ -19,7 +19,6 @@ public class ProjectDTO {
 	String EMposition;
 	String EMtask;
 	String employment;
-	
 	public String getCompanyCode() {
 		return companyCode;
 	}
@@ -32,11 +31,11 @@ public class ProjectDTO {
 	public void setProjectCode(String projectCode) {
 		this.projectCode = projectCode;
 	}
-	public String getProjcetName() {
-		return projcetName;
+	public String getProjectName() {
+		return projectName;
 	}
-	public void setProjcetName(String projcetName) {
-		this.projcetName = projcetName;
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
 	}
 	public String getDivision() {
 		return division;
@@ -44,17 +43,17 @@ public class ProjectDTO {
 	public void setDivision(String division) {
 		this.division = division;
 	}
-	public String getProjcetSince() {
-		return projcetSince;
+	public String getProjectSince() {
+		return projectSince;
 	}
-	public void setProjcetSince(String projcetSince) {
-		this.projcetSince = projcetSince;
+	public void setProjectSince(String projectSince) {
+		this.projectSince = projectSince;
 	}
-	public String getProjcetTill() {
-		return projcetTill;
+	public String getProjectTill() {
+		return projectTill;
 	}
-	public void setProjcetTill(String projcetTill) {
-		this.projcetTill = projcetTill;
+	public void setProjectTill(String projectTill) {
+		this.projectTill = projectTill;
 	}
 	public String getContractCompany() {
 		return contractCompany;
@@ -128,4 +127,6 @@ public class ProjectDTO {
 	public void setEmployment(String employment) {
 		this.employment = employment;
 	}
+	
+	
 }

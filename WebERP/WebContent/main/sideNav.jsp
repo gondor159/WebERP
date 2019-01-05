@@ -38,8 +38,8 @@
 							class="fa arrow"></span></a>
 						<ul class="nav nav-third-level">
 							<li><a href="../basisInformationManagement/generalCustomerRegist.jsp">일반거래처등록</a></li>
-							<li><a href="#">금융거래처등록</a></li>
-							<li><a href="#">품목군등록</a></li>
+							<li><a href="../basisInformationManagement/financialCustomRegist.jsp">금융거래처등록</a></li>
+							<li><a href="../basisInformationManagement/trackRegist.jsp">품목군등록</a></li>
 							<li><a href="#">품목등록</a></li>
 							<li><a href="#">창고/공정(생산)/외주공정등록</a></li>
 							<li><a href="../basisInformationManagement/projectRegist.jsp">프로젝트등록</a></li>

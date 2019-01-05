@@ -54,8 +54,7 @@
 <body>
 	<input type="hidden" id="paramCompanyCodeToSCCM" value="<%= companyCode %>">
 	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal"
-			aria-hidden="true">&times;</button>
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 		<h4 class="modal-title" id="searchCollectCustomLabel">수금거래처 검색</h4>
 	</div>
 	<div class="modal-body">

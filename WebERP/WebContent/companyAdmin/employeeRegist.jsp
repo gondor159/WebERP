@@ -214,7 +214,7 @@ $(function(){
 									<table class="table table-striped">
 										<tr>
 											<td style="text-align: right;"><h5>사원 ID</h5></td>
-											<td><input class="form-control" type="text" id="userID" name="userID"></td>
+											<td><input class="form-control" type="text" id="userID" name="userID" readonly></td>
 											<td><button class="btn btn-default" id="searchUserButton" type="button"><i class="fa fa-search-plus"></i></button></td>
 											<td></td>
 										</tr>
